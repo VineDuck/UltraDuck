@@ -2,6 +2,11 @@
 // Hide Vine Items UK
 
 function initHideItemsUK() {
+    
+    // Catch empty RFY
+    if(queue === "potluck" && document.querySelector(".vvp-no-offers-msg")){
+        return false;
+    }
 
     //Define variables for later use
     var hiddenCount = 0;
@@ -39,6 +44,7 @@ function initHideItemsUK() {
       <a id="hideVineItems-unhighlightText">Unhighlight Keyword / Phrase</a>
       </div>
     </span>
+    <br /><br />
     `;
 
     messageSpan.querySelector("#hideVineItems-togglePage").addEventListener("change", toggleHidden)

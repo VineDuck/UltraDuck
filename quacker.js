@@ -15,8 +15,6 @@ function initQuacker() {
     //                      Start script                      //
     ////////////////////////////////////////////////////////////
 
-    const queue = new URL(window.location).searchParams.get('queue');
-
     if (! document.getElementById('vvp-reviews-tab')) {
         // This is not the page you are looking for
         console.log ('Wrong page, aborting');

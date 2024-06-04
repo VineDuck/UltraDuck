@@ -14,7 +14,7 @@
 // @require     hideitems.js
 // @require     keypress.js
 // @require     quacker.js
-// @version     0.001
+// @version     0.01
 // @description Hides items, auto refreshes, quacks and notifies.
 // ==/UserScript==
 
@@ -30,6 +30,7 @@ document.onreadystatechange = function() {
     if (document.readyState !== "interactive")
         return false;
 
+    queue = new URL(window.location).searchParams.get('queue');
     initHideItemsUK();
     initKeys();
     if (navigator.userAgent.includes('Mobile'))
