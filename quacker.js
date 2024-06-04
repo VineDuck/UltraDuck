@@ -6,10 +6,10 @@ function initQuacker() {
     const show_notifications_on_afa = true;
 
     // Alert sound
-    const alert_sound = new Audio ("https://github.com/Jimbo5431/RFY-Userscript/raw/main/quack.mp3");
+    const alert_sound = new Audio ("https://github.com/Jimbo5431/UltraDuck/raw/main/quack.mp3");
 
     // Notification image
-    const notification_image_url = "https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/rubber-duck.png";
+    const notification_image_url = "https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/rubber-duck.png";
 
     ////////////////////////////////////////////////////////////
     //                      Start script                      //
