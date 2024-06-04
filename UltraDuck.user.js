@@ -14,7 +14,7 @@
 // @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/hideitems.js
 // @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/keypress.js
 // @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/quacker.js
-// @version     0.02
+// @version     0.03
 // @description Hides items, auto refreshes, quacks and notifies.
 // ==/UserScript==
 
@@ -29,9 +29,9 @@ GM_addStyle(`
 document.onreadystatechange = function() {
     if (document.readyState !== "interactive")
         return false;
-    
+
     // don't run on search page
-    if (new URL(window.location).searchParams.get('search'))
+    if (document.location.href.indexOf('search') >-1)
     {
         initKeys();
         return false;
@@ -41,11 +41,12 @@ document.onreadystatechange = function() {
     if (! queue)
         queue = "last_chance";
 
-    initHideItemsUK();
-    initKeys();
     if (navigator.userAgent.includes('Mobile'))
         GM_addStyle(mobileCSS());
     else
         GM_addStyle(deskCSS());
+
+    initHideItemsUK();
+    initKeys();
     initQuacker();
 }
