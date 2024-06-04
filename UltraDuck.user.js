@@ -18,6 +18,10 @@
 // @description Hides items, auto refreshes, quacks and notifies.
 // ==/UserScript==
 
+// redirect 
+if (window.location.href === "https://www.amazon.co.uk/vine/vine-items")
+    window.location.href = "/vine/vine-items?queue=last_chance";
+
 // Add a style before the page loads to hide the product grid, to prevent the redraw being visible
 GM_addStyle(`
 #vvp-items-grid {
