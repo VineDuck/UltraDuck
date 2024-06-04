@@ -117,9 +117,22 @@ function initQuacker() {
                 break;
         }
 
+        var page;
+        switch(queue) {
+            case 'encore':
+                page = 'AI';
+                break;
+            case 'last_chance':
+                page = 'AFA';
+                break;
+            case 'potluck':
+                page = 'RFY';
+                break;
+        }
+
         GM_notification({
             text: "🦆🦆 quack quack 🦆🦆",
-            title: "New item listed",
+            title: "New item listed on " + page,
             image: notification_image_url,
             onclick: function() {
                 window.parent.focus();
