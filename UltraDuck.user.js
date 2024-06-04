@@ -9,12 +9,12 @@
 // @grant       GM_addStyle
 // @grant       GM_listValues
 // @grant       GM_notification
-// @require     deskthor.js
-// @require     mobilethor.js
-// @require     hideitems.js
-// @require     keypress.js
-// @require     quacker.js
-// @version     0.01
+// @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/deskthor.js
+// @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/mobilethor.js
+// @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/hideitems.js
+// @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/keypress.js
+// @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/quacker.js
+// @version     0.02
 // @description Hides items, auto refreshes, quacks and notifies.
 // ==/UserScript==
 
