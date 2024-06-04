@@ -2,7 +2,7 @@
 // @name        UltraDuck
 // @namespace   https://github.com/Jimbo5431/UltraDuck
 // @run-at      document-start
-// @match       https://www.amazon.co.uk/vine/vine-items
+// @match       https://www.amazon.co.uk/vine/vine-items*
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_deleteValue
@@ -14,7 +14,7 @@
 // @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/hideitems.js
 // @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/keypress.js
 // @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/quacker.js
-// @version     0.03
+// @version     0.03.1
 // @description Hides items, auto refreshes, quacks and notifies.
 // ==/UserScript==
 
