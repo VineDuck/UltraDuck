@@ -39,6 +39,10 @@ document.onreadystatechange = function() {
         return false;
     }
 
+    queue = new URL(window.location).searchParams.get('queue')
+    if (! queue)
+        queue = "last_chance";
+
     // don't run on search page
     if (document.location.href.indexOf('search') >-1)
     {
@@ -46,10 +50,6 @@ document.onreadystatechange = function() {
         initHideItemsUK();
         return false;
     }
-
-    queue = new URL(window.location).searchParams.get('queue')
-    if (! queue)
-        queue = "last_chance";
 
     if (navigator.userAgent.includes('Mobile'))
         GM_addStyle(mobileCSS());
