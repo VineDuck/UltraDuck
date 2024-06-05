@@ -14,7 +14,7 @@
 // @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/hideitems.js
 // @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/keypress.js
 // @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/quacker.js
-// @version     0.03.1
+// @version     0.04.0
 // @description Hides items, auto refreshes, quacks and notifies.
 // ==/UserScript==
 
@@ -29,6 +29,15 @@ GM_addStyle(`
 document.onreadystatechange = function() {
     if (document.readyState !== "interactive")
         return false;
+    
+    // Captcha or something
+    if (! document.getElementById('vvp-reviews-tab')) {
+        // This is not the page you are looking for
+        console.log ('Wrong page, aborting');
+        alert_sound.play ();
+        throw new Error("Possibly a captcha");
+        return false;
+    }
 
     // don't run on search page
     if (document.location.href.indexOf('search') >-1)

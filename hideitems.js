@@ -9,8 +9,9 @@ function initHideItemsUK() {
     }
 
     //Define variables for later use
-    var hiddenCount = 0;
-    var filteredCount = 0;
+    hiddenCount = 0;
+    filteredCount = 0;
+    totalCount = 0;
     const bgcolour=window.getComputedStyle(document.body).getPropertyValue('background-color');
     console.log(bgcolour);
     const textcolour=window.getComputedStyle(document.body).getPropertyValue('color');
@@ -202,6 +203,7 @@ function initHideItemsUK() {
     document.querySelectorAll(".vvp-item-tile").forEach( (tile) => {
         var itemLink = tile.querySelector(".vvp-item-product-title-container > a[href^='/dp/']");
         if (itemLink) {
+            totalCount += 1;
             var ASIN = itemLink.getAttribute("href").slice(4);
             var linkText=itemLink.textContent;
             if (isHidden(ASIN)) {

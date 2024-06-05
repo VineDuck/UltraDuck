@@ -15,13 +15,6 @@ function initQuacker() {
     //                      Start script                      //
     ////////////////////////////////////////////////////////////
 
-    if (! document.getElementById('vvp-reviews-tab')) {
-        // This is not the page you are looking for
-        console.log ('Wrong page, aborting');
-        alert_sound.play ();
-        throw new Error("Possibly a captcha");
-    }
-
     const reload_interval = ((Math.floor(Math.random() * 5000)) + 3000);
     const original_title = document.title;
 
@@ -80,20 +73,12 @@ function initQuacker() {
 
     function checkNew() {
         new_load = false;
-        let items = document.getElementById('vvp-items-grid');
-        if (! items) {
-            return;
+        console.log('Count: ' + (hiddenCount + filteredCount) + " / " + totalCount);
+        if ((hiddenCount + filteredCount) === totalCount) {
+            return true;
         }
-        items = items.getElementsByClassName('vvp-item-tile');
-        if (items && items.length) {
-            console.log('Items found, checking visibility');
-            for (const item of items) {
-                if (window.getComputedStyle(item).display === 'block') {
-                    console.log('Found one');
-                    return stopScript();
-                }
-            }
-        }
+        console.log('Found one');
+        return stopScript();
     }
 
     function refreshMe() {
