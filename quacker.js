@@ -1,9 +1,4 @@
 function initQuacker() {
-    // change to false to skip notifications.
-    const show_notifications = true;
-    // control notifications for AI and AFA
-    const show_notifications_on_ai = false;
-    const show_notifications_on_afa = true;
 
     // Alert sound
     const alert_sound = new Audio ("https://github.com/Jimbo5431/UltraDuck/raw/main/quack.mp3");
@@ -15,7 +10,7 @@ function initQuacker() {
     //                      Start script                      //
     ////////////////////////////////////////////////////////////
 
-    const reload_interval = ((Math.floor(Math.random() * 5000)) + 3000);
+    const reload_interval = (Math.floor(Math.random() * ((max_refresh_int - min_refresh_int) * 1000)) + (min_refresh_int * 1000));
     const original_title = document.title;
 
     console.log('Delay: ' + reload_interval);
@@ -46,11 +41,13 @@ function initQuacker() {
     }
 
     function runScript() {
+        if ((! refresh_rfy && queue === "potluck") || (! refresh_afa && queue === "last_chance") || (! refresh_ai && queue === "encore")) {
+            return false;
+        }
         console.log('Tab is inactive. Setting timeout...');
         refresh_timeout = setTimeout(refreshMe, reload_interval);
         if (new_load) {
-            // need to wait while addons hide the items
-            setTimeout(checkNew, 1500);
+            checkNew();
         }
     }
 

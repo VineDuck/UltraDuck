@@ -8,55 +8,55 @@ function initKeys(){
         }
 
         switch (e.key) {
-        case "h":
+        case shortcuts.hideAll:
             document.querySelectorAll(".vvp-item-tile:not(.hideVineItems-hideASIN) .hideVineItems-toggleASIN").forEach( (hideLink) => {hideLink.click();});
             break;
-        case "s":
+        case shortcuts.unhideAll:
             document.querySelectorAll(".vvp-item-tile.hideVineItems-hideASIN .hideVineItems-toggleASIN").forEach( (hideLink) => {hideLink.click();});
             break;
-        case "r":
+        case shortcuts.rfy:
             document.location.href = "/vine/vine-items?queue=potluck";
             break;
-        case "a":
+        case shortcuts.afa:
             document.location.href = "/vine/vine-items?queue=last_chance";
             break;
-        case "i":
+        case shortcuts.ai:
             document.location.href = "/vine/vine-items?queue=encore";
             break;
-        case "n":
+        case shortcuts.nextPage:
             document.querySelector("#vvp-items-grid-container>div>ul.a-pagination li:last-child a")?.click();
             break;
-        case "p":
+        case shortcuts.prevPage:
             document.querySelector("#vvp-items-grid-container>div>ul.a-pagination li:first-child a")?.click();
             break;
-        case "1":
+        case shortcuts.page1ai:
             document.location.href = "/vine/vine-items?queue=encore&page=1";
             break;
-        case "2":
+        case shortcuts.page2ai:
             document.location.href = "/vine/vine-items?queue=encore&page=2";
             break;
-        case "3":
+        case shortcuts.page3ai:
             document.location.href = "/vine/vine-items?queue=encore&page=3";
             break;
-        case "4":
+        case shortcuts.page4ai:
             document.location.href = "/vine/vine-items?queue=encore&page=4";
             break;
-        case "5":
+        case shortcuts.page5ai:
             document.location.href = "/vine/vine-items?queue=encore&page=5";
             break;
-        case "6":
+        case shortcuts.page6ai:
             document.location.href = "/vine/vine-items?queue=encore&page=6";
             break;
-        case "7":
+        case shortcuts.page7ai:
             document.location.href = "/vine/vine-items?queue=encore&page=7";
             break;
-        case "8":
+        case shortcuts.page8ai:
             document.location.href = "/vine/vine-items?queue=encore&page=8";
             break;
-        case "9":
+        case shortcuts.page9ai:
             document.location.href = "/vine/vine-items?queue=encore&page=9";
             break;
-        case "0":
+        case shortcuts.page10ai:
             document.location.href = "/vine/vine-items?queue=encore&page=10";
             break;
         }

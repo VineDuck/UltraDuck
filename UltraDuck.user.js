@@ -9,19 +9,54 @@
 // @grant       GM_addStyle
 // @grant       GM_listValues
 // @grant       GM_notification
-// @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/deskthor.js
-// @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/mobilethor.js
-// @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/hideitems.js
-// @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/keypress.js
-// @require     https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/quacker.js
-// @version     0.04.2
+// @require     ./deskthor.js
+// @require     ./mobilethor.js
+// @require     ./hideitems.js
+// @require     ./keypress.js
+// @require     ./quacker.js
+// @version     0.05.0
 // @description Hides items, auto refreshes, quacks and notifies.
 // ==/UserScript==
+
+// Which pages to refresh on
+refresh_rfy = true;
+refresh_afa = true;
+refresh_ai = true;
+
+// change to false to skip notifications.
+show_notifications = true;
+// control notifications for AI and AFA
+show_notifications_on_ai = false;
+show_notifications_on_afa = true;
+
+// Refresh timings, in seconds
+min_refresh_int = 3;
+max_refresh_int = 8
+
+shortcuts = {
+    "rfy":          "r",
+    "afa":          "a",
+    "ai":           "i",
+    "nextPage":     "n",
+    "prevPage":     "p",
+    "hideAll":      "h",
+    "unhideAll":    "s",
+    "page1ai":      "1",
+    "page2ai":      "2",
+    "page3ai":      "3",
+    "page4ai":      "4",
+    "page5ai":      "5",
+    "page6ai":      "6",
+    "page7ai":      "7",
+    "page8ai":      "8",
+    "page9ai":      "9",
+    "page10ai":     "0",
+};
 
 // Add a style before the page loads to hide the product grid, to prevent the redraw being visible
 GM_addStyle(`
 #vvp-items-grid {
-  display:none !important;
+    display:none !important;
 }
 
 `);
