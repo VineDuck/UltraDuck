@@ -14,7 +14,7 @@
 // @require     ./hideitems.js
 // @require     ./keypress.js
 // @require     ./quacker.js
-// @version     0.05.1
+// @version     0.05.2
 // @description Hides items, auto refreshes, quacks and notifies.
 // ==/UserScript==
 
