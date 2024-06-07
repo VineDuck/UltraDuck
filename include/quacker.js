@@ -9,11 +9,19 @@ class ultraDuckQuacker {
     static hiddenCount = 0;
     static filteredCount = 0;
     static totalCount = 0;
+    static originalTitle = document.title;
+    static showNotifications = true;
+    static showNotificationsOnAFA = true;
+    static showNotificationsOnAI = false;
+    static titleInterval = null;
 
     static quack() {
         ultraDuckQuacker.stop();
         console.log('🛑 🦆 Quack! 🦆 🛑');
         ultraDuckQuacker.quackSound.play();
+        window.addEventListener("focus", ultraDuckQuacker.stopFlashTitle);
+        ultraDuckQuacker.showNotif();
+        ultraDuckQuacker.titleInterval = setInterval(ultraDuckQuacker.flashTitle, 500);
     }
 
     static run() {
@@ -62,5 +70,56 @@ class ultraDuckQuacker {
         }
         console.log('🦆 Found one 🦆');
         ultraDuckQuacker.quack();
+    }
+
+    static flashTitle() {
+        if (document.title === ultraDuckQuacker.originalTitle){
+            document.title = '* New Items *';
+        } else {
+            document.title = ultraDuckQuacker.originalTitle;
+        }
+    }
+
+    static stopFlashTitle() {
+        clearInterval(ultraDuckQuacker.titleInterval);
+        document.title = ultraDuckQuacker.originalTitle;
+        window.removeEventListener("focus", ultraDuckQuacker.stopFlashTitle);
+    }
+
+    static showNotif() {
+        if (! ultraDuckQuacker.showNotifications)
+            return false;
+
+        switch (queue) {
+            case "last_chance":
+                if (! ultraDuckQuacker.showNotificationsOnAFA)
+                    return false;
+                break;
+            case "encore":
+                if (! ultraDuckQuacker.showNotificationsOnAI)
+                    return false;
+                break;
+        }
+        var page;
+        switch(queue) {
+            case 'encore':
+                page = 'AI';
+                break;
+            case 'last_chance':
+                page = 'AFA';
+                break;
+            case 'potluck':
+                page = 'RFY';
+                break;
+        }
+
+        GM_notification({
+            text: "🦆🦆 quack quack 🦆🦆",
+            title: "New item listed on " + page,
+            image: ultraDuckQuacker.quackImage,
+            onclick: function() {
+                window.parent.focus();
+            }
+        });
     }
 }

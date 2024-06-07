@@ -15,7 +15,7 @@
 // @author      Jimbo
 // @description Finds new items, and quacks
 // @run-at      document-start
-// @version     1.0
+// @version     1.0.1
 // ==/UserScript==
 
 ultraDuckKeys.shortcuts = {
@@ -37,6 +37,11 @@ ultraDuckKeys.shortcuts = {
     "page9ai":      "9",
     "page10ai":     "0",
 };
+
+ultraDuckQuacker.showNotifications = true;
+ultraDuckQuacker.showNotificationsOnAFA = true;
+ultraDuckQuacker.showNotificationsOnAI = false;
+
 
 ultraDuckStyle.applyThor();
 
