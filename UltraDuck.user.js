@@ -15,7 +15,7 @@
 // @author      Jimbo
 // @description Finds new items, and quacks
 // @run-at      document-start
-// @version     1.0.1
+// @version     1.0.2
 // ==/UserScript==
 
 ultraDuckKeys.shortcuts = {
@@ -73,6 +73,7 @@ document.onreadystatechange = function() {
     window.addEventListener("focus", ultraDuckQuacker.pause);
     if(! document.hasFocus()) {
         ultraDuckQuacker.check();
+        ultraDuckQuacker.run();
     }
 }
 
