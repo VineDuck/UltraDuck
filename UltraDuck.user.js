@@ -15,7 +15,7 @@
 // @author      Jimbo
 // @description Finds new items, and quacks
 // @run-at      document-start
-// @version     1.0.2
+// @version     1.0.3
 // ==/UserScript==
 
 ultraDuckKeys.shortcuts = {
@@ -42,8 +42,8 @@ ultraDuckQuacker.showNotifications = true;
 ultraDuckQuacker.showNotificationsOnAFA = true;
 ultraDuckQuacker.showNotificationsOnAI = false;
 
-
 ultraDuckStyle.applyThor();
+ultraDuckStyle.applyStyles('#vvp-items-grid { display:none !important; }');
 
 document.onreadystatechange = function() {
     if (document.readyState !== "interactive") {
