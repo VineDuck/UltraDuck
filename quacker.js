@@ -24,6 +24,7 @@ function initQuacker() {
 
     if (! document.hasFocus()) {
         runScript();
+        checkNew();
     }
 
     function flashTitle() {
@@ -46,9 +47,9 @@ function initQuacker() {
         }
         console.log('Tab is inactive. Setting timeout...');
         refresh_timeout = setTimeout(refreshMe, reload_interval);
-        if (new_load) {
-            checkNew();
-        }
+//        if (new_load) {
+//            checkNew();
+//        }
     }
 
     function pauseScript() {
