@@ -15,7 +15,7 @@
 // @author      Jimbo
 // @description Finds new items, and quacks
 // @run-at      document-start
-// @version     1.0.5.2
+// @version     1.0.5.3
 // ==/UserScript==
 
 // Refresh settings
