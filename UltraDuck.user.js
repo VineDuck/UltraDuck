@@ -15,9 +15,24 @@
 // @author      Jimbo
 // @description Finds new items, and quacks
 // @run-at      document-start
-// @version     1.0.3
+// @version     1.0.4
 // ==/UserScript==
 
+// Refresh settings
+ultraDuckQuacker.minRefresh = 3000; // 3 seconds
+ultraDuckQuacker.maxRefresh = 10000; // 10 seconds
+
+// Notification settings
+ultraDuckQuacker.showNotifications = true;
+ultraDuckQuacker.showNotificationsOnRFY = true;
+ultraDuckQuacker.showNotificationsOnAFA = true;
+ultraDuckQuacker.showNotificationsOnAI = false;
+
+/* To change the quack, use the following:
+ultraDuckQuacker.quackSound = new Audio ('path/to/audio');
+*/
+
+// To change keyboard shortcuts, use ultraDuckKeys.shortcuts
 ultraDuckKeys.shortcuts = {
     "rfy":          "r",
     "afa":          "a",
@@ -38,39 +53,45 @@ ultraDuckKeys.shortcuts = {
     "page10ai":     "0",
 };
 
-ultraDuckQuacker.showNotifications = true;
-ultraDuckQuacker.showNotificationsOnAFA = true;
-ultraDuckQuacker.showNotificationsOnAI = false;
-
+//--------------------- Start script ---------------------//
+// Apply thorvarium styles
 ultraDuckStyle.applyThor();
+// Hide items grid to prevent flicker
 ultraDuckStyle.applyStyles('#vvp-items-grid { display:none !important; }');
 
+// Now wait until the page is rendered
 document.onreadystatechange = function() {
     if (document.readyState !== "interactive") {
         return false;
     }
 
-    // Hit a snag
+    // Hit a snag, probably a Captcha or error page
     if (! document.getElementById('vvp-reviews-tab')) {
         console.log('❗🦆 Hit an unexpected page, aborting 🦆❗');
         ultraDuckQuacker.stop;
         return false;
     }
 
+    // Check what page we're on
     queue = new URL(window.location).searchParams.get('queue')
     if (! queue) {
         queue = "last_chance";
     }
 
-    // don't run on search page
+    // Only run hide-items on search page
     if (document.location.href.indexOf('search') >-1) {
         initHideItemsUK();
         return false;
     }
 
+    // Run hide-items
     initHideItemsUK();
+
+    // Register the focus/unfocus events
     window.addEventListener("blur", ultraDuckQuacker.run);
     window.addEventListener("focus", ultraDuckQuacker.pause);
+
+    // Only run the check on a new page if it does not have focus, otherwise the user refreshed it manually.
     if(! document.hasFocus()) {
         ultraDuckQuacker.check();
         ultraDuckQuacker.run();

@@ -11,6 +11,7 @@ class ultraDuckQuacker {
     static totalCount = 0;
     static originalTitle = document.title;
     static showNotifications = true;
+    static showNotificationsOnRFY = true;
     static showNotificationsOnAFA = true;
     static showNotificationsOnAI = false;
     static titleInterval = null;
@@ -91,6 +92,10 @@ class ultraDuckQuacker {
             return false;
 
         switch (queue) {
+            case "potluck":
+                if (! ultraDuckQuacker.showNotificationsOnRFY)
+                    return false;
+                break;
             case "last_chance":
                 if (! ultraDuckQuacker.showNotificationsOnAFA)
                     return false;
