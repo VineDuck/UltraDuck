@@ -22,6 +22,7 @@ class ultraDuckQuacker {
         ultraDuckQuacker.quackSound.play();
         window.addEventListener("focus", ultraDuckQuacker.stopFlashTitle);
         ultraDuckQuacker.showNotif();
+        ultraDuckQuacker.flashTitle();
         ultraDuckQuacker.titleInterval = setInterval(ultraDuckQuacker.flashTitle, 500);
     }
 
