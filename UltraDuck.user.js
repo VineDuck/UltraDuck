@@ -20,7 +20,12 @@
 
 // Refresh settings
 ultraDuckQuacker.minRefresh = 3000; // 3 seconds
-ultraDuckQuacker.maxRefresh = 10000; // 10 seconds
+ultraDuckQuacker.maxRefresh = 8000; // 10 seconds
+
+// Page settings
+ultraDuckQuacker.runOnRFY = true;
+ultraDuckQuacker.runOnAFA = true;
+ultraDuckQuacker.runOnAI = true;
 
 // Notification settings
 ultraDuckQuacker.showNotifications = true;
@@ -86,8 +91,8 @@ document.onreadystatechange = function() {
         queue = "last_chance";
     }
 
-    // Only run hide-items on search page
-    if (document.location.href.indexOf('search') >-1) {
+    // Only run hide-items on exluded pages
+    if (! ultraDuckQuacker.runCheck()) {
         initHideItemsUK();
         return false;
     }

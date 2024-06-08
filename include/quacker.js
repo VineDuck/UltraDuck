@@ -5,6 +5,9 @@ class ultraDuckQuacker {
     static maxRefresh = 10000; // 10 Seconds
     static delay = Math.floor(Math.random () * (ultraDuckQuacker.maxRefresh - ultraDuckQuacker.minRefresh)) + ultraDuckQuacker.minRefresh;
     static refreshTimer = null;
+    static runOnRFY = true;
+    static runOnAFA = true;
+    static runOnAI = true;
     static allStop = false;
     static hiddenCount = 0;
     static filteredCount = 0;
@@ -31,6 +34,23 @@ class ultraDuckQuacker {
         ultraDuckQuacker.showNotif();
         ultraDuckQuacker.flashTitle();
         ultraDuckQuacker.titleInterval = setInterval(ultraDuckQuacker.flashTitle, 500);
+    }
+
+    // Check if we should run quacker
+    static runCheck() {
+        if(document.location.href.indexOf('search') >-1) {
+            return false;
+        }
+        if((!ultraDuckQuacker.runOnAFA) && queue === 'last_chance') {
+            return false;
+        }
+        if ((!ultraDuckQuacker.runOnAI) && queue === 'encore') {
+            return false;
+        }
+        if ((!ultraDuckQuacker.runOnRFY) && queue === 'potluck') {
+            return false;
+        }
+        return true;
     }
 
     static run() {
@@ -106,30 +126,22 @@ class ultraDuckQuacker {
         if (! ultraDuckQuacker.showNotifications)
             return false;
 
+        var page;
         switch (queue) {
             case "potluck":
+                page = 'RFY';
                 if (! ultraDuckQuacker.showNotificationsOnRFY)
                     return false;
                 break;
             case "last_chance":
+                page = 'AFA';
                 if (! ultraDuckQuacker.showNotificationsOnAFA)
                     return false;
                 break;
             case "encore":
+                page = 'AI';
                 if (! ultraDuckQuacker.showNotificationsOnAI)
                     return false;
-                break;
-        }
-        var page;
-        switch(queue) {
-            case 'encore':
-                page = 'AI';
-                break;
-            case 'last_chance':
-                page = 'AFA';
-                break;
-            case 'potluck':
-                page = 'RFY';
                 break;
         }
 
