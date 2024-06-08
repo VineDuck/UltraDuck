@@ -15,7 +15,7 @@
 // @author      Jimbo
 // @description Finds new items, and quacks
 // @run-at      document-start
-// @version     1.0.5.1
+// @version     1.0.5.2
 // ==/UserScript==
 
 // Refresh settings
@@ -71,7 +71,13 @@ document.onreadystatechange = function() {
     if (! document.getElementById('vvp-reviews-tab')) {
         console.log('❗🦆 Hit an unexpected page, aborting 🦆❗');
         ultraDuckQuacker.stop;
+        GM_setValue('UltraDuckStop', true);
         return false;
+    }
+
+    // Page loaded fine, reset the Duck Stop
+    if (GM_getValue('UltraDuckStop', false)) {
+        GM_setValue('UltraDuckStop', false);
     }
 
     // Check what page we're on

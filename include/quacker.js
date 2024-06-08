@@ -16,6 +16,13 @@ class ultraDuckQuacker {
     static showNotificationsOnAI = false;
     static titleInterval = null;
 
+    static checkStop() {
+        if (ultraDuckQuacker.allStop || GM_getValue('UltraDuckStop', false)) {
+            return true;
+        }
+        return false;
+    }
+
     static quack() {
         ultraDuckQuacker.stop();
         console.log('🛑 🦆 Quack! 🦆 🛑');
@@ -51,16 +58,23 @@ class ultraDuckQuacker {
     }
 
     static refresh() {
-        if(ultraDuckQuacker.allStop) {
+        if(ultraDuckQuacker.checkStop()) {
             console.log('🦆 Ignoring refresh, page stopped 🦆');
             return false;
         }
-        ultraDuckQuacker.refreshTimer = setTimeout(function() {window.location.reload()}, ultraDuckQuacker.delay);
+        ultraDuckQuacker.refreshTimer = setTimeout(ultraDuckQuacker.refreshTimeout, ultraDuckQuacker.delay);
         console.log('🦆 Refresh timer: ' + ultraDuckQuacker.delay + 'ms 🦆');
     }
 
+    static refreshTimeout() {
+        if(ultraDuckQuacker.checkStop()) {
+            console.log('🦆 Ignoring refresh, page stopped 🦆');
+            return false;
+        }
+        window.location.reload();
+    }
     static check() {
-        if(ultraDuckQuacker.allStop) {
+        if(ultraDuckQuacker.checkStop()) {
             console.log('🦆 Ignoring check, page stopped 🦆');
             return false;
         }
