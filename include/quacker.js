@@ -29,9 +29,9 @@ class ultraDuckQuacker {
 
     static honk() {
         ultraDuckQuacker.stop();
-        console.log('❗🦆 Hit an unexpected page, aborting 🦆❗');
+        console.log('❗🦢 Hit an unexpected page, aborting 🦢❗');
         GM_setValue('UltraDuckStop', true);
-        console.log('🛑 🦆 HONK!!!!! 🦆 🛑');
+        console.log('🛑 🦢 HONK!!!!! 🦢 🛑');
         let honkSound = new Audio(ultraDuckQuacker.honkSoundUrl);
         honkSound.play();
     }
