@@ -1,5 +1,6 @@
 class ultraDuckQuacker {
     static quackSoundUrl = 'https://github.com/Jimbo5431/UltraDuck/raw/main/quack.mp3';
+    static honkSoundUrl = 'https://github.com/Jimbo5431/UltraDuck/raw/main/honk.mp3';
     static quackImage = 'https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/rubber-duck.png';
     static minRefresh = 3000; // 3 Seconds
     static maxRefresh = 10000; // 10 Seconds
@@ -26,6 +27,14 @@ class ultraDuckQuacker {
         return false;
     }
 
+    static honk() {
+        ultraDuckQuacker.stop();
+        console.log('❗🦆 Hit an unexpected page, aborting 🦆❗');
+        GM_setValue('UltraDuckStop', true);
+        console.log('🛑 🦆 HONK!!!!! 🦆 🛑');
+        let honkSound = new Audio(ultraDuckQuacker.honkSoundUrl);
+        honkSound.play();
+    }
     static quack() {
         let quackSound = new Audio(ultraDuckQuacker.quackSoundUrl);
         ultraDuckQuacker.stop();

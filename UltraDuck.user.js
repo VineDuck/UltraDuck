@@ -19,7 +19,7 @@
 // @author      Jimbo
 // @description Finds new items, and quacks
 // @run-at      document-start
-// @version     1.1
+// @version     1.1.0.1
 // ==/UserScript==
 
 ultraDuckSettings.getSettings();
@@ -61,9 +61,7 @@ document.onreadystatechange = function() {
 
     // Hit a snag, probably a Captcha or error page
     if (! document.getElementById('vvp-reviews-tab')) {
-        console.log('❗🦆 Hit an unexpected page, aborting 🦆❗');
-        ultraDuckQuacker.stop;
-        GM_setValue('UltraDuckStop', true);
+        ultraDuckQuacker.honk();
         return false;
     }
 
