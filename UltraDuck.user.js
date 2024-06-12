@@ -3,39 +3,26 @@
 // @namespace   UltraDuck
 // @match       https://www.amazon.co.uk/vine/vine-items*
 // @grant       GM.addStyle
+// @grant       GM_addStyle
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_deleteValue
 // @grant       GM_listValues
 // @grant       GM_notification
+// @grant       GM_registerMenuCommand
+// @require     include/monkeyconfig.js
 // @require     include/keys.js
 // @require     include/styles.js
 // @require     include/hide.js
 // @require     include/quacker.js
+// @require     include/settings.js
 // @author      Jimbo
 // @description Finds new items, and quacks
 // @run-at      document-start
-// @version     1.0.5.3
+// @version     1.0.5.4
 // ==/UserScript==
 
-// Refresh settings
-ultraDuckQuacker.minRefresh = 3000; // 3 seconds
-ultraDuckQuacker.maxRefresh = 8000; // 10 seconds
-
-// Page settings
-ultraDuckQuacker.runOnRFY = true;
-ultraDuckQuacker.runOnAFA = true;
-ultraDuckQuacker.runOnAI = true;
-
-// Notification settings
-ultraDuckQuacker.showNotifications = true;
-ultraDuckQuacker.showNotificationsOnRFY = true;
-ultraDuckQuacker.showNotificationsOnAFA = true;
-ultraDuckQuacker.showNotificationsOnAI = false;
-
-/* To change the quack, use the following:
-ultraDuckQuacker.quackSound = new Audio ('path/to/audio');
-*/
+ultraDuckSettings.getSettings();
 
 // To change keyboard shortcuts, use ultraDuckKeys.shortcuts
 ultraDuckKeys.shortcuts = {
@@ -110,4 +97,3 @@ document.onreadystatechange = function() {
         ultraDuckQuacker.run();
     }
 }
-

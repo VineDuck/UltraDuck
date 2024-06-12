@@ -1,5 +1,5 @@
 class ultraDuckQuacker {
-    static quackSound = new Audio ('https://github.com/Jimbo5431/UltraDuck/raw/main/quack.mp3');
+    static quackSoundUrl = 'https://github.com/Jimbo5431/UltraDuck/raw/main/quack.mp3';
     static quackImage = 'https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/rubber-duck.png';
     static minRefresh = 3000; // 3 Seconds
     static maxRefresh = 10000; // 10 Seconds
@@ -27,9 +27,10 @@ class ultraDuckQuacker {
     }
 
     static quack() {
+        let quackSound = new Audio(ultraDuckQuacker.quackSoundUrl);
         ultraDuckQuacker.stop();
         console.log('🛑 🦆 Quack! 🦆 🛑');
-        ultraDuckQuacker.quackSound.play();
+        quackSound.play();
         window.addEventListener("focus", ultraDuckQuacker.stopFlashTitle);
         ultraDuckQuacker.showNotif();
         ultraDuckQuacker.flashTitle();
