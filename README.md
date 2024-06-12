@@ -1,19 +1,19 @@
 # 🦆 UltraDuck 🦆
 ### Quacks when an unhidden RFY item is found. Built in hider script, keyboard shortcuts and styling.
 Hider script based on https://github.com/MD2K23/VineToolsUK/<br />
-Styles using https://github.com/Thorvarium/vine-styling
+Styles using https://github.com/Thorvarium/vine-styling<br />
+Settings using https://github.com/odyniec/MonkeyConfig
 
 **${\textsf{\color{green}Current version 1.1}}$ Updated 12/06/24 21:48**
 
-Refreshes the vine page every 3 to 10 seconds as long as the tab is not focused and there are no items showing.
-If an item is found, or a CAPTCHA occurs, the script will stop running.
-Quacks when item found, and also sends notifications for AFA and RFY.
-Pages that it runs on, and notifications can be customised easily.
+For android install, [see this link](https://github.com/Jimbo5431/UltraDuck/blob/main/android.md)<br />
 
-You will need a userscript plugin such as GreaseMonkey, VoilentMonkey, FireMonkey or TamperMonkey to run this script.
+Refreshes the vine page every 3 to 10 seconds as long as the tab is not focused and there are no items showing.<br />
+If an item is found, or a CAPTCHA occurs, the script will stop running on all tabs that it's open on. Refresh each tab after completing CAPTCHA.<br />
+Quacks when item found. Pages that it runs on, and notifications can be customised easily.<br />
 
-
-### How to use
+### How to install
+- You will need a userscript addon for your browser. I use Violentmonkey. There are others available. Install one.
 - Use [this link](https://github.com/Jimbo5431/UltraDuck/raw/main/UltraDuck.user.js) to install the script.
 - In site settings in chrome, or permissions > autoplay in firefox, make sure to allow amazon.co.uk for sound.
 - Open the required page, and hide all items.
@@ -28,6 +28,15 @@ Just hide any items you don't want, hit F5, and click somewhere in the page agai
 **${\textsf{\color{red}This is due to chrome policies on auto play.}}$**
 
 **${\textsf{\color{red}Important: Page refresh only works when the tab/window is not currently active.}}$**
+
+### How to change settings
+- Open a vine page.
+- Click the monkey face on the address bar. If you don't see it, click the jigsaw icon and pin Violentmonkey to the toolbar.
+- Click UltraDuck Settings.
+- Run on afa/rfy/ai will change whether the page refresher/quacker runs on those pages. The hide item stuff will always run.
+- Show notifications will change whether a desktop notification is shown.
+- Min refresh is the minimum time between refreshes, in milliseconds (seconds X 1000).
+- Max refresh is the maximum time between refreshes, in milliseconds (seconds X 1000).
 
 ### How to update
 - Your userscript manager should have an update option, if not simply follow the install link again.
