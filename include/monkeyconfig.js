@@ -30,7 +30,7 @@ function MonkeyConfig() {
             
             if (data.buttons === undefined)
                 /* Set default buttons */
-                data.buttons = [ 'save', 'defaults', 'cancel' ];
+                data.buttons = [ 'save', 'defaults', '' ];
             
             if (data.title === undefined)
                 /*
@@ -299,6 +299,7 @@ function MonkeyConfig() {
      * Cancel button click event handler 
      */
     function cancelClick() {
+        window.location.reload();
         close();
     }
     
