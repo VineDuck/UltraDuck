@@ -320,7 +320,7 @@ function MonkeyConfig() {
      *            Display mode options
      */
     function open(mode, options) {
-        ultraDuckQuacker.pause();
+        ultraDuckQuacker.stop();
         function openDone() {
             /* Attach button event handlers */
             var button;
