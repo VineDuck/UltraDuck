@@ -3,7 +3,7 @@
 Hider script based on https://github.com/MD2K23/VineToolsUK/<br />
 Styles using https://github.com/Thorvarium/vine-styling
 
-**${\textsf{\color{green}Current version 1.0.5.3}}$ Updated 08/06/24 08:48**
+**${\textsf{\color{green}Current version 1.0.5.4}}$ Updated 12/06/24 21:10**
 
 Refreshes the vine page every 3 to 10 seconds as long as the tab is not focused and there are no items showing.
 If an item is found, or a CAPTCHA occurs, the script will stop running.
