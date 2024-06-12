@@ -52,10 +52,8 @@ class ultraDuckSettings {
         ultraDuckQuacker.showNotificationsOnRFY = ultraDuckSettings.settings.get('notifications_on_RFY');
         ultraDuckQuacker.showNotificationsOnAFA = ultraDuckSettings.settings.get('notifications_on_AFA');
         ultraDuckQuacker.showNotificationsOnAI = ultraDuckSettings.settings.get('notifications_on_AI');
-        ultraDuckQuacker.minRefresh = ultraDuckSettings.settings.get('min_refresh');
-        ultraDuckQuacker.maxRefresh = ultraDuckSettings.settings.get('max_refresh');
-        console.log(ultraDuckQuacker.delay);
+        ultraDuckQuacker.minRefresh = parseInt(ultraDuckSettings.settings.get('min_refresh'));
+        ultraDuckQuacker.maxRefresh = parseInt(ultraDuckSettings.settings.get('max_refresh'));
         ultraDuckQuacker.delay = Math.floor(Math.random () * (ultraDuckQuacker.maxRefresh - ultraDuckQuacker.minRefresh)) + ultraDuckQuacker.minRefresh;
-        console.log(ultraDuckQuacker.delay);
     }
 }
