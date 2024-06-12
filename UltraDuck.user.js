@@ -19,7 +19,7 @@
 // @author      Jimbo
 // @description Finds new items, and quacks
 // @run-at      document-start
-// @version     1.1.0.1
+// @version     1.1.0.2
 // ==/UserScript==
 
 ultraDuckSettings.getSettings();
