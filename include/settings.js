@@ -54,6 +54,8 @@ class ultraDuckSettings {
         ultraDuckQuacker.showNotificationsOnAI = ultraDuckSettings.settings.get('notifications_on_AI');
         ultraDuckQuacker.minRefresh = ultraDuckSettings.settings.get('min_refresh');
         ultraDuckQuacker.maxRefresh = ultraDuckSettings.settings.get('max_refresh');
+        console.log(ultraDuckQuacker.delay);
         ultraDuckQuacker.delay = Math.floor(Math.random () * (ultraDuckQuacker.maxRefresh - ultraDuckQuacker.minRefresh)) + ultraDuckQuacker.minRefresh;
+        console.log(ultraDuckQuacker.delay);
     }
 }
