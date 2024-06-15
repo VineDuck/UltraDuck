@@ -12,10 +12,17 @@ Refreshes the vine page every 3 to 10 seconds as long as the tab is not focused 
 If an item is found, or a CAPTCHA occurs, the script will stop running on all tabs that it's open on. Refresh each tab after completing CAPTCHA.<br />
 Quacks when item found. Pages that it runs on, and notifications can be customised easily.<br />
 
+### Sections
+[How to install](#how-to-install) <br />
+[Fixing Chrome sound issues](#fixing-chrome-sound-issues) <br />
+[How to change settings](#how-to-change-settings) <br />
+[How to update](#how-to-update) <br />
+[Keyboard shortcuts](#keyboard-shortcuts) <br />
+
 ### How to install
 - You will need a userscript addon for your browser. I use Violentmonkey. There are others available. Install one.
 - Use [this link](https://github.com/Jimbo5431/UltraDuck/raw/main/UltraDuck.user.js) to install the script.
-- In site settings in chrome, or permissions > autoplay in firefox, make sure to allow amazon.co.uk for sound.
+- In site settings in chrome (see below), or permissions > autoplay in firefox, make sure to allow amazon.co.uk for sound.
 - Open the required page, and hide all items.
 - Refresh page.
 - Click somewhere in the page to enable sound to work.
@@ -24,10 +31,16 @@ Quacks when item found. Pages that it runs on, and notifications can be customis
 After an item has been found, the script will be stopped until you refresh the page manually.
 Just hide any items you don't want, hit F5, and click somewhere in the page again before focusing on a different window.
 
-**${\textsf{\color{red}Important: Make sure you have clicked somewhere in the page before doing something else, or sound may not work.}}$**
-**${\textsf{\color{red}This is due to chrome policies on auto play.}}$**
+**${\textsf{\color{red}Important: Page refresh only works when the tab/window is not currently active.}}$** <br />
+**${\textsf{\color{red}Simply pull up another window in front, such as file explorer or another browser window.}}$**
 
-**${\textsf{\color{red}Important: Page refresh only works when the tab/window is not currently active.}}$**
+### Fixing Chrome sound issues
+- Open an amazon page, and click the icon to the left of the address <br />
+![Step one](https://github.com/Jimbo5431/UltraDuck/blob/main/fix%20chrome%201.jpg?raw=true) <br />
+- Open site settings <br />
+![Step two](https://github.com/Jimbo5431/UltraDuck/blob/main/fix%20chrome%202.jpg?raw=true) <br />
+- Change sound to allow <br />
+![Step three](https://github.com/Jimbo5431/UltraDuck/blob/main/fix%20chrome%203.jpg?raw=true) <br />
 
 ### How to change settings
 - Open a vine page.
@@ -55,11 +68,3 @@ By default, the keyboard shortcuts are as follow:
 - ...
 - 9: Page 9 of AI.
 - 0: Page 10 of AI.
-
-### Fixing chrome sound issues
-- Open an amazon page, and click the icon to the left of the address <br />
-![Step one](https://github.com/Jimbo5431/UltraDuck/blob/main/fix%20chrome%201.jpg?raw=true) <br />
-- Open site settings <br />
-![Step two](https://github.com/Jimbo5431/UltraDuck/blob/main/fix%20chrome%202.jpg?raw=true) <br />
-- Change sound to allow <br />
-![Step three](https://github.com/Jimbo5431/UltraDuck/blob/main/fix%20chrome%203.jpg?raw=true) <br />
