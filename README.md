@@ -4,7 +4,7 @@ Hider script based on https://github.com/MD2K23/VineToolsUK/<br />
 Styles using https://github.com/Thorvarium/vine-styling<br />
 Settings using https://github.com/odyniec/MonkeyConfig
 
-**${\textsf{\color{green}Current version 1.1}}$ Updated 12/06/24 21:48**
+**${\textsf{\color{green}Current version 1.1.0.2}}$ Updated 13/06/24 12:11**
 
 For android install, [see this link](https://github.com/Jimbo5431/UltraDuck/blob/main/android.md)<br />
 
@@ -55,3 +55,11 @@ By default, the keyboard shortcuts are as follow:
 - ...
 - 9: Page 9 of AI.
 - 0: Page 10 of AI.
+
+### Fixing chrome sound issues
+- Open an amazon page, and click the icon to the left of the address <br />
+![Step one](https://github.com/Jimbo5431/UltraDuck/blob/main/fix%20chrome%201.jpg?raw=true) <br />
+- Open site settings <br />
+![Step two](https://github.com/Jimbo5431/UltraDuck/blob/main/fix%20chrome%202.jpg?raw=true) <br />
+- Change sound to allow <br />
+![Step three](https://github.com/Jimbo5431/UltraDuck/blob/main/fix%20chrome%203.jpg?raw=true) <br />
