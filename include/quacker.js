@@ -14,6 +14,7 @@ class ultraDuckQuacker {
     static filteredCount = 0;
     static totalCount = 0;
     static originalTitle = document.title;
+    static page = '';
     static showNotifications = true;
     static showNotificationsOnRFY = true;
     static showNotificationsOnAFA = true;
@@ -43,6 +44,7 @@ class ultraDuckQuacker {
         window.addEventListener("focus", ultraDuckQuacker.stopFlashTitle);
         ultraDuckQuacker.showNotif();
         ultraDuckQuacker.flashTitle();
+        document.title = ultraDuckQuacker.originalTitle
         ultraDuckQuacker.titleInterval = setInterval(ultraDuckQuacker.flashTitle, 500);
     }
 
@@ -63,15 +65,33 @@ class ultraDuckQuacker {
         return true;
     }
 
+    static setPage() {
+        if(ultraDuckQuacker.page !== '') {
+            return false;
+        }
+        switch (queue) {
+            case "potluck":
+                ultraDuckQuacker.page = 'RFY';
+                break;
+            case "last_chance":
+                ultraDuckQuacker.page = 'AFA';
+                break;
+            case "encore":
+                ultraDuckQuacker.page = 'AI';
+                break;
+        }
+    }
+
     static run() {
+        ultraDuckQuacker.setPage();
         console.log('💨🦆 Duck is running 🦆💨');
-        document.title = '💨🦆 ' + document.title;
+        document.title = '💨🦆 ' + ultraDuckQuacker.page;
         ultraDuckQuacker.refresh();
     }
 
     static pause() {
         console.log('⏸🦆 Duck is paused 🦆⏸');
-        document.title = '⏸🦆 ' + document.title;
+        document.title = '⏸🦆 ' + ultraDuckQuacker.page;
         if(ultraDuckQuacker.refreshTimer !== null) {
             console.log('🛑 🦆 Refresh stopped 🦆 🛑');
             clearTimeout(ultraDuckQuacker.refreshTimer);
@@ -106,6 +126,7 @@ class ultraDuckQuacker {
         window.location.reload();
     }
     static check() {
+        ultraDuckQuacker.setPage();
         if(ultraDuckQuacker.checkStop()) {
             console.log('🦆 Ignoring check, page stopped 🦆');
             return false;
@@ -122,7 +143,7 @@ class ultraDuckQuacker {
 
     static flashTitle() {
         if (document.title === ultraDuckQuacker.originalTitle){
-            document.title = '* New Items *';
+            document.title = '🎁 New Items 🎁';
         } else {
             document.title = ultraDuckQuacker.originalTitle;
         }
@@ -138,28 +159,9 @@ class ultraDuckQuacker {
         if (! ultraDuckQuacker.showNotifications)
             return false;
 
-        var page;
-        switch (queue) {
-            case "potluck":
-                page = 'RFY';
-                if (! ultraDuckQuacker.showNotificationsOnRFY)
-                    return false;
-                break;
-            case "last_chance":
-                page = 'AFA';
-                if (! ultraDuckQuacker.showNotificationsOnAFA)
-                    return false;
-                break;
-            case "encore":
-                page = 'AI';
-                if (! ultraDuckQuacker.showNotificationsOnAI)
-                    return false;
-                break;
-        }
-
         GM_notification({
             text: "🦆🦆 quack quack 🦆🦆",
-            title: "New item listed on " + page,
+            title: "New item listed on " + ultraDuckQuacker.page,
             image: ultraDuckQuacker.quackImage,
             onclick: function() {
                 window.parent.focus();
