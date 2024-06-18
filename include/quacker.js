@@ -65,11 +65,13 @@ class ultraDuckQuacker {
 
     static run() {
         console.log('💨🦆 Duck is running 🦆💨');
+        document.title = '💨🦆 ' + document.title;
         ultraDuckQuacker.refresh();
     }
 
     static pause() {
         console.log('⏸🦆 Duck is paused 🦆⏸');
+        document.title = '⏸🦆 ' + document.title;
         if(ultraDuckQuacker.refreshTimer !== null) {
             console.log('🛑 🦆 Refresh stopped 🦆 🛑');
             clearTimeout(ultraDuckQuacker.refreshTimer);
