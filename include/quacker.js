@@ -161,6 +161,13 @@ class ultraDuckQuacker {
         if (! ultraDuckQuacker.showNotifications)
             return false;
 
+        if (! ultraDuckQuacker.showNotificationsOnRFY && ultraDuckQuacker.page === 'RFY')
+            return false;
+        if (! ultraDuckQuacker.showNotificationsOnAFA && ultraDuckQuacker.page === 'AFA')
+            return false;
+        if (! ultraDuckQuacker.showNotificationsOnAI && ultraDuckQuacker.page === 'AI')
+            return false;
+
         GM_notification({
             text: "🦆🦆 quack quack 🦆🦆",
             title: "New item listed on " + ultraDuckQuacker.page,
