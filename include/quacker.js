@@ -30,12 +30,14 @@ class ultraDuckQuacker {
 
     static honk() {
         ultraDuckQuacker.stop();
+        document.title = ultraDuckQuacker.originalTitle;
         console.log('❗🦢 Hit an unexpected page, aborting 🦢❗');
         GM_setValue('UltraDuckStop', true);
         console.log('🛑 🦢 HONK!!!!! 🦢 🛑');
         let honkSound = new Audio(ultraDuckQuacker.honkSoundUrl);
         honkSound.play();
     }
+
     static quack() {
         let quackSound = new Audio(ultraDuckQuacker.quackSoundUrl);
         ultraDuckQuacker.stop();
