@@ -4,9 +4,12 @@ Hider script based on https://github.com/MD2K23/VineToolsUK/<br />
 Styles using https://github.com/Thorvarium/vine-styling<br />
 Settings using https://github.com/odyniec/MonkeyConfig
 
-**${\textsf{\color{green}Current version 1.1.0.2}}$ Updated 13/06/24 12:11**
+**${\textsf{\color{green}Current version 1.1.0.4}}$ Updated 18/06/24 07:40**
 
 For android install, [see this link](https://github.com/Jimbo5431/UltraDuck/blob/main/android.md)<br />
+
+The page title will now change to "💨🦆 (RFY/AFA/AI)" when the page refresher is running.<br />
+If it shows the original "Amazon vine" or "⏸🦆" title, the refresher is not running.
 
 Refreshes the vine page every 3 to 10 seconds as long as the tab is not focused and there are no items showing.<br />
 If an item is found, or a CAPTCHA occurs, the script will stop running on all tabs that it's open on. Refresh each tab after completing CAPTCHA.<br />
