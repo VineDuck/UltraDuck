@@ -125,7 +125,10 @@ class ultraDuckQuacker {
             console.log('🦆 Ignoring refresh, page stopped 🦆');
             return false;
         }
-        window.location.reload();
+        let ts = Math.floor(Date.now() / 1000);
+        let href = new URL(window.location.href);
+        href.searchParams.set('ts', ts);
+        window.location.assign(href.toString());
     }
     static check() {
         ultraDuckQuacker.setPage();

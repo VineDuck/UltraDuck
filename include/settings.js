@@ -3,7 +3,7 @@ class ultraDuckSettings {
         title: 'UltraDuck Settings',
         menuCommand: true,
         buttons: ['save', 'cancel'],
-        onSave: function() {window.location.reload();},
+        onSave: function() {window.location.reload(true);},
         params: {
             run_on_rfy: {
                 type: 'checkbox',

@@ -299,7 +299,7 @@ function MonkeyConfig() {
      * Cancel button click event handler 
      */
     function cancelClick() {
-        window.location.reload();
+        window.location.reload(true);
         close();
     }
     

@@ -77,7 +77,7 @@ function initHideItemsUK() {
                 }
                 newFilters.push(response);
                 GM_setValue(filtertype+":", JSON.stringify(newFilters));
-                location.reload();
+                window.location.reload(true);
             }
         }
     }
