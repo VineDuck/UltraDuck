@@ -20,6 +20,7 @@ class ultraDuckQuacker {
     static showNotificationsOnAFA = true;
     static showNotificationsOnAI = false;
     static titleInterval = null;
+    static countdown = null;
 
     static checkStop() {
         if (ultraDuckQuacker.allStop || GM_getValue('UltraDuckStop', false)) {
@@ -87,7 +88,8 @@ class ultraDuckQuacker {
     static run() {
         ultraDuckQuacker.setPage();
         console.log('💨🦆 Duck is running 🦆💨');
-        document.title = '💨🦆 ' + ultraDuckQuacker.page;
+        ultraDuckQuacker.countdown = Math.round(ultraDuckQuacker.delay / 1000);
+        document.title = '💨🦆 ' + ultraDuckQuacker.page + ' ' + ultraDuckQuacker.countdown + 's';
         ultraDuckQuacker.refresh();
     }
 
@@ -97,6 +99,7 @@ class ultraDuckQuacker {
         if(ultraDuckQuacker.refreshTimer !== null) {
             console.log('🛑 🦆 Refresh stopped 🦆 🛑');
             clearTimeout(ultraDuckQuacker.refreshTimer);
+            clearInterval(ultraDuckQuacker.titleInterval);
         }
     }
 
@@ -106,6 +109,7 @@ class ultraDuckQuacker {
         if(ultraDuckQuacker.refreshTimer !== null) {
             console.log('🛑 🦆 Refresh stopped 🦆 🛑');
             clearTimeout(ultraDuckQuacker.refreshTimer);
+            clearInterval(ultraDuckQuacker.titleInterval);
         }
         window.removeEventListener('blur', ultraDuckQuacker.run);
         window.removeEventListener('focus', ultraDuckQuacker.pause);
@@ -117,6 +121,7 @@ class ultraDuckQuacker {
             return false;
         }
         ultraDuckQuacker.refreshTimer = setTimeout(ultraDuckQuacker.refreshTimeout, ultraDuckQuacker.delay);
+        ultraDuckQuacker.titleInterval = setInterval(ultraDuckQuacker.countdownTitle, 1000);
         console.log('🦆 Refresh timer: ' + ultraDuckQuacker.delay + 'ms 🦆');
     }
 
@@ -130,6 +135,7 @@ class ultraDuckQuacker {
         href.searchParams.set('ts', ts);
         window.location.assign(href.toString());
     }
+
     static check() {
         ultraDuckQuacker.setPage();
         if(ultraDuckQuacker.checkStop()) {
@@ -144,6 +150,11 @@ class ultraDuckQuacker {
         }
         console.log('🦆 Found one 🦆');
         ultraDuckQuacker.quack();
+    }
+
+    static countdownTitle() {
+        ultraDuckQuacker.countdown -= 1;
+        document.title = '💨🦆 ' + ultraDuckQuacker.page + ' ' + ultraDuckQuacker.countdown + 's';
     }
 
     static flashTitle() {
