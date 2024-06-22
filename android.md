@@ -21,3 +21,12 @@
 <br />
 
 ![Android notification](https://github.com/Jimbo5431/UltraDuck/blob/main/android%20notif.jpg?raw=true)
+
+### How to run
+- Open a vine page in Kiwi.
+- Make sure all items are hidden.
+- Tap the RFY/AFA/AI button to reload the page and register interaction for the sound to work.
+- Tap the ➕ at the top of the screen.
+- Tap the 2️⃣ at the top of the screen.
+- You should now see 2 tabs, the top saying something like "💨🦆 RFY 5s".
+- You can now minimize Kiwi, and use a different app.
