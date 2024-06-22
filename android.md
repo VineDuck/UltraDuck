@@ -33,7 +33,7 @@
 
 ### How to run overnight
 - Install [Macrodroid](https://play.google.com/store/apps/details?id=com.arlosoft.macrodroid).
-- You can install these 2 files, or continue below. [File 1](https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/Kiwi_close.macro) [file 2](https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/Kiwi_launch.macro)
+- You can install these 2 files, or continue below. [File 1](https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/Kiwi_close.macro) [file 2](https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/Kiwi_launch.macro) (long press, save as/download, then open with macrodroid)
 
   <br />
 - Go to Macros and click the plus icon.
