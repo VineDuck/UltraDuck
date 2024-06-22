@@ -18,7 +18,6 @@
 - Show notifications will change whether an android notification is shown.
 - Min refresh is the minimum time between refreshes, in milliseconds (seconds X 1000).
 - Max refresh is the maximum time between refreshes, in milliseconds (seconds X 1000).
-<br />
 
 ### How to run
 - Open a vine page in Kiwi.
@@ -29,4 +28,5 @@
 - You should now see 2 tabs, the top saying something like "💨🦆 RFY 5s".
 - You can now minimize Kiwi, and use a different app.
 
+<br />
 ![Android notification](https://github.com/Jimbo5431/UltraDuck/blob/main/android%20notif.jpg?raw=true)
