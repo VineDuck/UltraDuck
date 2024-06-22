@@ -29,4 +29,5 @@
 - You can now minimize Kiwi, and use a different app.
 
 <br />
+
 ![Android notification](https://github.com/Jimbo5431/UltraDuck/blob/main/android%20notif.jpg?raw=true)
