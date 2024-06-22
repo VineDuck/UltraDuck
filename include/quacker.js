@@ -4,7 +4,7 @@ class ultraDuckQuacker {
     static quackImage = 'https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/rubber-duck.png';
     static minRefresh = 3000; // 3 Seconds
     static maxRefresh = 10000; // 10 Seconds
-    static delay = Math.floor(Math.random () * (ultraDuckQuacker.maxRefresh - ultraDuckQuacker.minRefresh)) + ultraDuckQuacker.minRefresh;
+    static delay = Math.round(Math.random () * (ultraDuckQuacker.maxRefresh - ultraDuckQuacker.minRefresh)) + ultraDuckQuacker.minRefresh;
     static refreshTimer = null;
     static runOnRFY = true;
     static runOnAFA = true;
