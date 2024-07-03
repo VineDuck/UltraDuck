@@ -130,9 +130,9 @@ class ultraDuckQuacker {
             console.log('🦆 Ignoring refresh, page stopped 🦆');
             return false;
         }
-        let ts = Math.floor(Date.now() / 1000);
+//        let ts = Math.floor(Date.now() / 1000);
         let href = new URL(window.location.href);
-        href.searchParams.set('ts', ts);
+//        href.searchParams.set('ts', ts);
         window.location.assign(href.toString());
     }
 
