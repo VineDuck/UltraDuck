@@ -4,6 +4,7 @@ class ultraDuckQuacker {
     static quackImage = 'https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/rubber-duck.png';
     static minRefresh = 3000; // 3 Seconds
     static maxRefresh = 10000; // 10 Seconds
+    static rfyDelay = 0;
     static delay = Math.round(Math.random () * (ultraDuckQuacker.maxRefresh - ultraDuckQuacker.minRefresh)) + ultraDuckQuacker.minRefresh;
     static refreshTimer = null;
     static runOnRFY = true;
@@ -86,6 +87,9 @@ class ultraDuckQuacker {
     }
 
     static run() {
+        if (queue === 'potluck' && ultraDuckQuacker.rfyDelay !== 0) {
+            ultraDuckQuacker.delay = ultraDuckQuacker.rfyDelay;
+        }
         ultraDuckQuacker.setPage();
         console.log('💨🦆 Duck is running 🦆💨');
         ultraDuckQuacker.countdown = Math.round(ultraDuckQuacker.delay / 1000);
