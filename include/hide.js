@@ -231,7 +231,7 @@ function initHideItemsUK() {
             a.classList.add("hideVineItems-toggleASIN");
             a2.classList.add("ultraDuckDiscord");
             tileContent.append(a);
-            if (ultraDuckDiscord.token !== '')
+            if (ultraDuckDiscord.token !== '' && (! (location.search).includes("search=")))
                 tileContent.append(a2);
         }
     }
