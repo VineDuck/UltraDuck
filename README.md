@@ -1,5 +1,5 @@
 # 🦆 UltraDuck 🦆
-### Quacks when an unhidden RFY item is found. Built in hider script, keyboard shortcuts and styling.
+### Quacks when an unhidden RFY item is found. Built in hider script, keyboard shortcuts, styling and Discord announce.
 Hider script based on https://github.com/MD2K23/VineToolsUK/<br />
 Styles using https://github.com/Thorvarium/vine-styling<br />
 Settings using https://github.com/odyniec/MonkeyConfig
