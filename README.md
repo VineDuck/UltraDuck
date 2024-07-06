@@ -71,3 +71,13 @@ By default, the keyboard shortcuts are as follow:
 - ...
 - 9: Page 9 of AI.
 - 0: Page 10 of AI.
+
+### How to use Discord announce
+❗❗❗Leave this unless you know whet you are doing❗❗❗
+- Open your browser, press f12 to open the console and select the network tab.
+- Go to https://discord.com/channels/@me
+- Find the @me name in the list on the left.
+- Copy the contents of the Authorization header from the headers box. This is your discord token.
+- ❗❗❗ Do not give your discord token to anyone else. ❗❗❗
+- Open UltraDuck settings, and paste your token in the token box. UltraDuck does not store your token anywhere except local storage.
+- Each item on the vine pages will now show an announce icon. Tap on it to announce to the relevant channel.
