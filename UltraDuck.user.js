@@ -10,6 +10,7 @@
 // @grant       GM_listValues
 // @grant       GM_notification
 // @grant       GM_registerMenuCommand
+// @grant       GM.xmlHttpRequest
 // @require     include/monkeyconfig.js
 // @require     include/keys.js
 // @require     include/styles.js

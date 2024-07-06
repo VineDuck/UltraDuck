@@ -41,19 +41,24 @@ class ultraDuckSettings {
                 type: 'number',
                 default: ultraDuckQuacker.maxRefresh
             },
+            discord_token: {
+                type: 'text',
+                default: ultraDuckDiscord.token
+            },
         }
     });
     
     static getSettings() {
-        ultraDuckQuacker.runOnRFY = ultraDuckSettings.settings.get('run_on_rfy');
-        ultraDuckQuacker.runOnAFA = ultraDuckSettings.settings.get('run_on_afa');
-        ultraDuckQuacker.runOnAI = ultraDuckSettings.settings.get('run_on_ai');
-        ultraDuckQuacker.showNotifications = ultraDuckSettings.settings.get('show_notifications');
-        ultraDuckQuacker.showNotificationsOnRFY = ultraDuckSettings.settings.get('notifications_on_RFY');
-        ultraDuckQuacker.showNotificationsOnAFA = ultraDuckSettings.settings.get('notifications_on_AFA');
-        ultraDuckQuacker.showNotificationsOnAI = ultraDuckSettings.settings.get('notifications_on_AI');
-        ultraDuckQuacker.minRefresh = parseInt(ultraDuckSettings.settings.get('min_refresh'));
-        ultraDuckQuacker.maxRefresh = parseInt(ultraDuckSettings.settings.get('max_refresh'));
+        ultraDuckQuacker.runOnRFY = ultraDuckSettings.settings.get('run_on_rfy', true);
+        ultraDuckQuacker.runOnAFA = ultraDuckSettings.settings.get('run_on_afa', true);
+        ultraDuckQuacker.runOnAI = ultraDuckSettings.settings.get('run_on_ai', true);
+        ultraDuckQuacker.showNotifications = ultraDuckSettings.settings.get('show_notifications', true);
+        ultraDuckQuacker.showNotificationsOnRFY = ultraDuckSettings.settings.get('notifications_on_RFY', true);
+        ultraDuckQuacker.showNotificationsOnAFA = ultraDuckSettings.settings.get('notifications_on_AFA', true);
+        ultraDuckQuacker.showNotificationsOnAI = ultraDuckSettings.settings.get('notifications_on_AI', false);
+        ultraDuckQuacker.minRefresh = parseInt(ultraDuckSettings.settings.get('min_refresh', 3000));
+        ultraDuckQuacker.maxRefresh = parseInt(ultraDuckSettings.settings.get('max_refresh', 10000));
         ultraDuckQuacker.delay = Math.floor(Math.random () * (ultraDuckQuacker.maxRefresh - ultraDuckQuacker.minRefresh)) + ultraDuckQuacker.minRefresh;
+        ultraDuckDiscord.token = ultraDuckSettings.settings.get('discord_token', '');
     }
 }

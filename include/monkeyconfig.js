@@ -95,8 +95,11 @@ function MonkeyConfig() {
      * @param name Name of the configuration parameter
      * @returns Value of the configuration parameter
      */
-    function get(name) {
-        return values[name];
+    function get(name, defaultVal) {
+        if(typeof values[name] !== 'undefined')
+            return values[name];
+        else
+            return defaultVal;
     }
     
     /**
