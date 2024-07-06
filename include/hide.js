@@ -1,38 +1,6 @@
 // https://github.com/MD2K23/VineToolsUK
 // Hide Vine Items UK
 
-class ultraDuckDiscord {
-    static token = '';
-    static announce(ASIN) {
-        if (ultraDuckDiscord.token === '')
-            return false;
-        let chan = '';
-        if(queue === 'potluck')
-            chan = '1147682680125796362';
-        else if(queue === 'encore')
-            chan = '1147682760669020310';
-        else
-            chan = '1147682719271231539';
-        let message = 'https://www.amazon.co.uk/dp/' + ASIN;
-        let channel_url = `https://discord.com/api/v9/channels/${chan}/messages`
-
-        GM.xmlHttpRequest({
-            method: 'POST',
-            url: channel_url,
-            data: JSON.stringify({ content: message }),
-            headers: {
-                'authorization': ultraDuckDiscord.token,
-                'accept': '/',
-                'authority': 'discord.com',
-                'content-type': 'application/json'
-            },
-            onload: function(response) {
-                console.log(response);
-            }
-        });
-    }
-}
-
 function initHideItemsUK() {
     
     // Catch empty RFY
@@ -211,7 +179,6 @@ function initHideItemsUK() {
         if (tileContent) {
             var filteredProduct = tile.querySelector(".vvp-item-tile:not(.hideVineItems-filterProduct) .vvp-item-tile-content");
             var a = document.createElement("span");
-            var a2 = document.createElement("span");
             if (filteredProduct) {
                 a.addEventListener("click", (e) =>{
                     tile.classList.toggle("hideVineItems-hideASIN");
@@ -225,14 +192,8 @@ function initHideItemsUK() {
                     updateCount();
                 });
             }
-            a2.addEventListener("click", (e) =>{
-                ultraDuckDiscord.announce(ASIN);
-            });
             a.classList.add("hideVineItems-toggleASIN");
-            a2.classList.add("ultraDuckDiscord");
             tileContent.append(a);
-            if (ultraDuckDiscord.token !== '' && (! (location.search).includes("search=")))
-                tileContent.append(a2);
         }
     }
 
@@ -305,21 +266,6 @@ function initHideItemsUK() {
     .hideVineItems-hideASIN .vvp-item-tile-content .hideVineItems-toggleASIN
     {
       background: url("${unhideSymbol}");
-      background-repeat: no-repeat;
-      background-size:contain;
-    }
-
-    .ultraDuckDiscord
-    {
-      position: absolute;
-      width: 20px !important;
-      height: 17px !important;
-      overflow: hidden;
-      top: 2px;
-      right: 20px;
-      background-color: rgba(0,0,0,0.0);
-      padding: 0;
-      background: url("${announceSymbol}");
       background-repeat: no-repeat;
       background-size:contain;
     }

@@ -45,10 +45,6 @@ class ultraDuckSettings {
                 type: 'number',
                 default: ultraDuckQuacker.rfyDelay
             },
-            discord_token: {
-                type: 'text',
-                default: ultraDuckDiscord.token
-            },
         }
     });
     
@@ -63,7 +59,6 @@ class ultraDuckSettings {
         ultraDuckQuacker.minRefresh = parseInt(ultraDuckSettings.settings.get('min_refresh', 3000));
         ultraDuckQuacker.maxRefresh = parseInt(ultraDuckSettings.settings.get('max_refresh', 10000));
         ultraDuckQuacker.delay = Math.floor(Math.random () * (ultraDuckQuacker.maxRefresh - ultraDuckQuacker.minRefresh)) + ultraDuckQuacker.minRefresh;
-        ultraDuckDiscord.token = ultraDuckSettings.settings.get('discord_token', '');
         ultraDuckQuacker.rfyDelay = parseInt(ultraDuckSettings.settings.get('rfy_delay', 0));
     }
 }

@@ -1,5 +1,5 @@
 # 🦆 UltraDuck 🦆
-### Quacks when an unhidden RFY item is found. Built in hider script, keyboard shortcuts, styling and Discord announce.
+### Quacks when an unhidden RFY item is found. Built in hider script, keyboard shortcuts and styling.
 Hider script based on https://github.com/MD2K23/VineToolsUK/<br />
 Styles using https://github.com/Thorvarium/vine-styling<br />
 Settings using https://github.com/odyniec/MonkeyConfig
@@ -54,7 +54,6 @@ Just hide any items you don't want, hit F5, and click somewhere in the page agai
 - Min refresh is the minimum time between refreshes, in milliseconds (seconds X 1000).
 - Max refresh is the maximum time between refreshes, in milliseconds (seconds X 1000).
 - Rfy delay is a separate value for RFY refresh. If set to 0, RFY will use the same values as other pages. If set to a number of milliseconds, it'll use that.
-- Discord token - see below. Leave empty unless you know what you're doing.
 
 ### How to update
 - Your userscript manager should have an update option, if not simply follow the install link again.
@@ -73,13 +72,3 @@ By default, the keyboard shortcuts are as follow:
 - ...
 - 9: Page 9 of AI.
 - 0: Page 10 of AI.
-
-### How to use Discord announce
-❗❗❗Leave this unless you know whet you are doing❗❗❗
-- Open your browser, press f12 to open the console and select the network tab.
-- Go to https://discord.com/channels/@me
-- Find the @me name in the list on the left.
-- Copy the contents of the Authorization header from the headers box. This is your discord token.
-- ❗❗❗ Do not give your discord token to anyone else. ❗❗❗
-- Open UltraDuck settings, and paste your token in the token box. UltraDuck does not store your token anywhere except local storage.
-- Each item on the vine pages will now show an announce icon. Tap on it to announce to the relevant channel.
