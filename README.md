@@ -54,6 +54,7 @@ Just hide any items you don't want, hit F5, and click somewhere in the page agai
 - Min refresh is the minimum time between refreshes, in milliseconds (seconds X 1000).
 - Max refresh is the maximum time between refreshes, in milliseconds (seconds X 1000).
 - Rfy delay is a separate value for RFY refresh. If set to 0, RFY will use the same values as other pages. If set to a number of milliseconds, it'll use that.
+- Discord token - see below. Leave empty unless you know what you're doing.
 
 ### How to update
 - Your userscript manager should have an update option, if not simply follow the install link again.
