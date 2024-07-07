@@ -6,7 +6,7 @@ Settings using https://github.com/odyniec/MonkeyConfig
 
 **${\textsf{\color{green}Current version 1.1.1.5}}$ Updated 08/07/24 00:26**
 
-For android install, [see this link](https://github.com/Jimbo5431/UltraDuck/blob/main/android.md)<br />
+For android install, [see this link](https://github.com/VineDuck/UltraDuck/blob/main/android.md)<br />
 
 The page title will now change to "💨🦆 (RFY/AFA/AI)" when the page refresher is running.<br />
 If it shows the original "Amazon vine" or "⏸🦆" title, the refresher is not running.
@@ -24,7 +24,7 @@ Quacks when item found. Pages that it runs on, and notifications can be customis
 
 ### How to install
 - You will need a userscript addon for your browser. I use Violentmonkey. There are others available. Install one.
-- Use [this link](https://github.com/Jimbo5431/UltraDuck/raw/main/UltraDuck.user.js) to install the script.
+- Use [this link](https://github.com/VineDuck/UltraDuck/raw/main/UltraDuck.user.js) to install the script.
 - In site settings in chrome, or permissions > autoplay in firefox, make sure to allow amazon.co.uk for sound.
 - Open a vine page. You will see a message telling you to click to start the duck.
 - Hide all items.
