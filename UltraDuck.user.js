@@ -17,10 +17,11 @@
 // @require     include/hide.js
 // @require     include/quacker.js
 // @require     include/settings.js
+// @require     include/ultraduck.js
 // @author      Jimbo
 // @description Finds new items, and quacks
 // @run-at      document-start
-// @version     1.1.1.4
+// @version     1.1.1.5
 // ==/UserScript==
 
 ultraDuckSettings.getSettings();
@@ -47,59 +48,16 @@ ultraDuckKeys.shortcuts = {
 };
 
 //--------------------- Start script ---------------------//
-// Apply thorvarium styles
-ultraDuckStyle.applyThor();
 // Hide items grid to prevent flicker
 ultraDuckStyle.applyStyles('#vvp-items-grid { display:none !important; }');
 
-// Catch any broken page loads hopefully
-console.log('🦆 Starting page load check 🦆');
-let startTimeout = setTimeout(function() {document.location.reload(true)}, 60000);
+// Apply thorvarium styles
+ultraDuckStyle.applyThor();
 
-// Now wait until the page is rendered
-document.onreadystatechange = function() {
-    if (document.readyState !== "interactive") {
-        return false;
-    }
-
-    console.log('🦆 Clearing page load check 🦆');
-    clearTimeout(startTimeout);
-
-    ultraDuckQuacker.originalTitle = document.title;
-
-    // Hit a snag, probably a Captcha or error page
-    if (! document.getElementById('vvp-reviews-tab')) {
-        ultraDuckQuacker.honk();
-        return false;
-    }
-
-    // Page loaded fine, reset the Duck Stop
-    if (GM_getValue('UltraDuckStop', false)) {
-        GM_setValue('UltraDuckStop', false);
-    }
-
-    // Check what page we're on
-    queue = new URL(window.location).searchParams.get('queue')
-    if (! queue) {
-        queue = "last_chance";
-    }
-
-    // Only run hide-items on exluded pages
-    if (! ultraDuckQuacker.runCheck()) {
-        initHideItemsUK();
-        return false;
-    }
-
-    // Run hide-items
-    initHideItemsUK();
-
-    // Register the focus/unfocus events
-    window.addEventListener("blur", ultraDuckQuacker.run);
-    window.addEventListener("focus", ultraDuckQuacker.pause);
-
-    // Only run the check on a new page if it does not have focus, otherwise the user refreshed it manually.
-    if(! document.hasFocus()) {
-        ultraDuckQuacker.check();
-        ultraDuckQuacker.run();
-    }
+// Check what page we're on
+queue = new URL(window.location).searchParams.get('queue')
+if (! queue) {
+    queue = "last_chance";
 }
+
+ultraDuck.startUp();

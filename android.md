@@ -7,20 +7,18 @@
 - Tap Violentmonkey from violentmonkey.github.io
 - Tap "Add to Chrome"
 - Close all tabs, and tap "New tab".
-- Open [this link](https://github.com/Jimbo5431/UltraDuck/raw/main/UltraDuck.user.js) in Kiwi, and you should get an install page.
+- Open [this link](https://github.com/VineDuck/UltraDuck/raw/main/UltraDuck.user.js) in Kiwi, and you should get an install page.
 - Tap install.
 
 ### How to run
 - Open a vine page in Kiwi.
+- Tap the box to enable the duck.
 - Make sure all items are hidden.
-- Tap the RFY/AFA/AI button to reload the page and register interaction for the sound to work.
 - Tap the ➕ at the top of the screen.
-- Tap the 2️⃣ at the top of the screen.
-- You should now see 2 tabs, the top saying something like "💨🦆 RFY 5s".
+- You should now see 1 tab, the top saying something like "💨🦆 RFY 5s".
 - You can now minimize Kiwi, use a different app or leave Kiwi in the tab selection page.
 
-**${\textsf{\color{red}Important: After each quack alert, you will need to refresh the page and }}$** <br />
-**${\textsf{\color{red}interact again before going back to the tab page.}}$**
+**${\textsf{\color{red}Important: After each quack alert, you will need to refresh the page.}}$** <br />
 
 ### How to change settings
 - Go to a vine page in Kiwi.
@@ -33,7 +31,7 @@
 
 ### How to run overnight
 - Install [Macrodroid](https://play.google.com/store/apps/details?id=com.arlosoft.macrodroid).
-- You can install these 2 files, or continue below. [File 1](https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/Kiwi_close.macro) [file 2](https://raw.githubusercontent.com/Jimbo5431/UltraDuck/main/Kiwi_launch.macro) (long press, save as/download, then open with macrodroid)
+- You can install these 2 files, or continue below. [File 1](https://raw.githubusercontent.com/VineDuck/UltraDuck/main/Kiwi_close.macro) [file 2](https://raw.githubusercontent.com/VineDuck/UltraDuck/main/Kiwi_launch.macro) (long press, save as/download, then open with macrodroid)
 
   <br />
 - Go to Macros and click the plus icon.
@@ -53,4 +51,4 @@
 - Leave kiwi on the tabs page and in the foreground while you sleep.
 <br />
 
-![Android notification](https://github.com/Jimbo5431/UltraDuck/blob/main/kiwimacro.jpg?raw=true)
+![Android notification](https://github.com/VineDuck/UltraDuck/blob/main/kiwimacro.jpg?raw=true)

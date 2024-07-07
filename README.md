@@ -25,25 +25,20 @@ Quacks when item found. Pages that it runs on, and notifications can be customis
 ### How to install
 - You will need a userscript addon for your browser. I use Violentmonkey. There are others available. Install one.
 - Use [this link](https://github.com/Jimbo5431/UltraDuck/raw/main/UltraDuck.user.js) to install the script.
-- In site settings in chrome (see below), or permissions > autoplay in firefox, make sure to allow amazon.co.uk for sound.
-- Open the required page, and hide all items.
-- Refresh page.
-- Click somewhere in the page to enable sound to work.
+- In site settings in chrome, or permissions > autoplay in firefox, make sure to allow amazon.co.uk for sound.
+- Open a vine page. You will see a message telling you to click to start the duck.
+- Hide all items.
 - Go use a different tab or app.
 
 After an item has been found, the script will be stopped until you refresh the page manually.
-Just hide any items you don't want, hit F5, and click somewhere in the page again before focusing on a different window.
+Just hide any items you don't want and hit F5 before focusing on a different window.
 
 **${\textsf{\color{red}Important: Page refresh only works when the tab/window is not currently active.}}$** <br />
 **${\textsf{\color{red}Simply pull up another window in front, such as file explorer or another browser window.}}$**
 
 ### Fixing Chrome sound issues
-- Open an amazon page, and click the icon to the left of the address <br />
-![Step one](https://github.com/Jimbo5431/UltraDuck/blob/main/fix%20chrome%201.jpg?raw=true) <br />
-- Open site settings <br />
-![Step two](https://github.com/Jimbo5431/UltraDuck/blob/main/fix%20chrome%202.jpg?raw=true) <br />
-- Change sound to allow <br />
-![Step three](https://github.com/Jimbo5431/UltraDuck/blob/main/fix%20chrome%203.jpg?raw=true) <br />
+Clicking the message to start the duck should fix Chromes sound issues.
+You should hear a quack after clicking the message.
 
 ### How to change settings
 - Open a vine page.
