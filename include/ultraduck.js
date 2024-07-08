@@ -29,15 +29,7 @@ class ultraDuck {
 
             // Check if chrome audio is fixed
             if (!sessionStorage.getItem('ultraDuckClicked')) {
-                if((ultraDuckQuacker.runOnAFA) && queue === 'last_chance') {
-                    ultraDuckStyle.applyDuck();
-                    return false;
-                }
-                else if ((ultraDuckQuacker.runOnAI) && queue === 'encore') {
-                    ultraDuckStyle.applyDuck();
-                    return false;
-                }
-                else if ((ultraDuckQuacker.runOnRFY) && queue === 'potluck') {
+                if(ultraDuckQuacker.runCheck()) {
                     ultraDuckStyle.applyDuck();
                     return false;
                 }
