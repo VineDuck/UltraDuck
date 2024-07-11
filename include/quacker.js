@@ -22,6 +22,8 @@ class ultraDuckQuacker {
     static showNotificationsOnAI = false;
     static titleInterval = null;
     static countdown = null;
+    static quackAttack = 0;
+    static quackAttackInterval = null;
 
     static checkStop() {
         if (ultraDuckQuacker.allStop || GM_getValue('UltraDuckStop', false)) {
@@ -41,15 +43,22 @@ class ultraDuckQuacker {
     }
 
     static quack() {
-        let quackSound = new Audio(ultraDuckQuacker.quackSoundUrl);
         ultraDuckQuacker.stop();
         console.log('🛑 🦆 Quack! 🦆 🛑');
-        quackSound.play();
+        ultraDuckQuacker.playQuack();
         window.addEventListener("focus", ultraDuckQuacker.stopFlashTitle);
         ultraDuckQuacker.showNotif();
         ultraDuckQuacker.flashTitle();
         document.title = ultraDuckQuacker.originalTitle
         ultraDuckQuacker.titleInterval = setInterval(ultraDuckQuacker.flashTitle, 500);
+        if (ultraDuckQuacker.quackAttack) {
+            ultraDuckQuacker.quackAttackInterval = setInterval(ultraDuckQuacker.playQuack, ultraDuckQuacker.quackAttack * 1000);
+        }
+    }
+
+    static playQuack() {
+        let quackSound = new Audio(ultraDuckQuacker.quackSoundUrl);
+        quackSound.play();
     }
 
     // Check if we should run quacker
@@ -171,6 +180,7 @@ class ultraDuckQuacker {
 
     static stopFlashTitle() {
         clearInterval(ultraDuckQuacker.titleInterval);
+        clearInterval(ultraDuckQuacker.quackAttackInterval);
         document.title = ultraDuckQuacker.originalTitle;
         window.removeEventListener("focus", ultraDuckQuacker.stopFlashTitle);
     }

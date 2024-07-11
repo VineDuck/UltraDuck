@@ -4,7 +4,7 @@ Hider script based on https://github.com/MD2K23/VineToolsUK/<br />
 Styles using https://github.com/Thorvarium/vine-styling<br />
 Settings using https://github.com/odyniec/MonkeyConfig
 
-**${\textsf{\color{green}Current version 1.1.1.6}}$ Updated 08/07/24 06:24**
+**${\textsf{\color{green}Current version 1.1.1.7}}$ Updated 2024-07-11 08:49**
 
 For android install, [see this link](https://github.com/VineDuck/UltraDuck/blob/main/android.md)<br />
 
@@ -49,6 +49,8 @@ You should hear a quack after clicking the message.
 - Min refresh is the minimum time between refreshes, in milliseconds (seconds X 1000).
 - Max refresh is the maximum time between refreshes, in milliseconds (seconds X 1000).
 - Rfy delay is a separate value for RFY refresh. If set to 0, RFY will use the same values as other pages. If set to a number of milliseconds, it'll use that.
+- Quack attack is whether the quack alert sound should be repeated. 0 for no, any other number is the number of seconds between quacks. Will stop when window is focused.
+- Use keys enables or disables keyboard shortcuts.
 
 ### How to update
 - Your userscript manager should have an update option, if not simply follow the install link again.

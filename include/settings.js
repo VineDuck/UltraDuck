@@ -45,6 +45,14 @@ class ultraDuckSettings {
                 type: 'number',
                 default: ultraDuckQuacker.rfyDelay
             },
+            quack_attack: {
+                type: 'number',
+                default: ultraDuckQuacker.quackAttack
+            },
+            use_keyboard: {
+                type: 'checkbox',
+                default: ultraDuckKeys.useKeys
+            },
         }
     });
     
@@ -60,5 +68,7 @@ class ultraDuckSettings {
         ultraDuckQuacker.maxRefresh = parseInt(ultraDuckSettings.settings.get('max_refresh', 10000));
         ultraDuckQuacker.delay = Math.floor(Math.random () * (ultraDuckQuacker.maxRefresh - ultraDuckQuacker.minRefresh)) + ultraDuckQuacker.minRefresh;
         ultraDuckQuacker.rfyDelay = parseInt(ultraDuckSettings.settings.get('rfy_delay', 0));
+        ultraDuckQuacker.quackAttack = parseInt(ultraDuckSettings.settings.get('quack_attack',0));
+        ultraDuckKeys.useKeys = (ultraDuckSettings.settings.get('use_keyboard',true) == true);
     }
 }

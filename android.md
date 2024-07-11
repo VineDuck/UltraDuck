@@ -24,10 +24,6 @@
 - Go to a vine page in Kiwi.
 - Tap the 3 dots at the top, scroll down and tap Violentmonkey.
 - Tap UltraDuck Settings.
-- Run on afa/rfy/ai will change whether the page refresher/quacker runs on those pages. The hide item stuff will always run.
-- Show notifications will change whether an android notification is shown.
-- Min refresh is the minimum time between refreshes, in milliseconds (seconds X 1000).
-- Max refresh is the maximum time between refreshes, in milliseconds (seconds X 1000).
 
 ### How to run overnight
 - Install [Macrodroid](https://play.google.com/store/apps/details?id=com.arlosoft.macrodroid).

@@ -1,4 +1,5 @@
 class ultraDuckKeys {
+    static useKeys = true;
     static shortcuts = {
         "rfy":          "r",
         "afa":          "a",
@@ -20,6 +21,8 @@ class ultraDuckKeys {
     };
 
     static keypress(e) {
+        if (!ultraDuckKeys.useKeys)
+            return false;
         if (e.ctrlKey || e.shiftKey || e.altKey || e.metaKey) {
             return false;
         }
