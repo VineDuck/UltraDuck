@@ -3,7 +3,7 @@
 
 class ultraDuckHider {
     static dateNow = new Date(new Date().toJSON().slice(0,10)).getTime();
-    static cleanDate = ultraDuckHider.dateNow - (7 * 86400000);
+    static cleanDate = ultraDuckHider.dateNow - (14 * 86400000);
 
     static cleanItems() {
         let lastClean = GM_getValue('lastClean', 0);
