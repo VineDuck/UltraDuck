@@ -30,6 +30,7 @@ class ultraDuck {
             // Check if chrome audio is fixed
             if (!sessionStorage.getItem('ultraDuckClicked')) {
                 if(ultraDuckQuacker.runCheck()) {
+                    ultraDuckHider.cleanItems();
                     ultraDuckStyle.applyDuck();
                     return false;
                 }

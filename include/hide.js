@@ -1,10 +1,40 @@
 // https://github.com/MD2K23/VineToolsUK
 // Hide Vine Items UK
 
+class ultraDuckHider {
+    static dateNow = new Date(new Date().toJSON().slice(0,10)).getTime();
+    static cleanDate = ultraDuckHider.dateNow - (7 * 86400000);
+
+    static cleanItems() {
+        let lastClean = GM_getValue('lastClean', 0);
+        if (lastClean > (ultraDuckHider.dateNow - 86400000))
+            return false;
+
+        console.log('🦆 Cleaning ASIN database 🦆');
+        let items = GM_listValues();
+        items.forEach(ultraDuckHider.cleanItem);
+        GM_setValue('lastClean', ultraDuckHider.dateNow);
+    }
+
+    static cleanItem(item) {
+        if (item.substr(0, 5) !== 'ASIN:')
+            return false;
+        let value = GM_getValue(item);
+        if (typeof value === 'string') {
+            value = new Date(value).getTime();
+            if (value >= ultraDuckHider.cleanDate)
+                GM_setValue(item, value);
+        }
+        if (value < ultraDuckHider.cleanDate)
+            GM_deleteValue(item);
+        //        console.log(typeof value);
+    }
+}
+
 function initHideItemsUK() {
     
     // Catch empty RFY
-    if(queue === "potluck" && document.querySelector(".vvp-no-offers-msg")){
+    if (queue === "potluck" && document.querySelector(".vvp-no-offers-msg")){
         return false;
     }
 
@@ -185,7 +215,7 @@ function initHideItemsUK() {
                         GM_deleteValue("ASIN:"+ASIN);
                         ultraDuckQuacker.hiddenCount -= 1;
                     } else {
-                        GM_setValue("ASIN:"+ASIN, new Date().toJSON().slice(0,10));
+                        GM_setValue("ASIN:"+ASIN, ultraDuckHider.dateNow);
                         ultraDuckQuacker.hiddenCount += 1;
                     }
                     updateCount();
