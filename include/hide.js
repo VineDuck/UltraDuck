@@ -34,7 +34,7 @@ class ultraDuckHider {
 function initHideItemsUK() {
     
     // Catch empty RFY
-    if (queue === "potluck" && document.querySelector(".vvp-no-offers-msg")){
+    if (document.querySelector(".vvp-no-offers-msg")){
         return false;
     }
 
