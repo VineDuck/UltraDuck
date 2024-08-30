@@ -279,11 +279,12 @@ function initHideItemsUK() {
     }
 
     .hideVineItems-toggleASIN {
+      z-index: 1;
       position: absolute;
       width: 20px !important;
       height: 17px !important;
       overflow: hidden;
-      top: 2px;
+      top: -18px;
       right: 0px;
       background-color: rgba(0,0,0,0.0);
       padding: 0;
