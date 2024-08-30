@@ -208,6 +208,7 @@ function initHideItemsUK() {
         if (tileContent) {
             var filteredProduct = tile.querySelector(".vvp-item-tile:not(.hideVineItems-filterProduct) .vvp-item-tile-content");
             var a = document.createElement("span");
+            var b = document.createElement("span");
             if (filteredProduct) {
                 a.addEventListener("click", (e) =>{
                     tile.classList.toggle("hideVineItems-hideASIN");
@@ -222,7 +223,9 @@ function initHideItemsUK() {
                 });
             }
             a.classList.add("hideVineItems-toggleASIN");
-            tileContent.append(a);
+            b.classList.add("hideVineItems-toggleASINContainer");
+            b.append(a);
+            tileContent.append(b);
         }
     }
 
@@ -278,16 +281,26 @@ function initHideItemsUK() {
       position: relative;
     }
 
+    .hideVineItems-toggleASINContainer {
+      z-index: 1;
+      position: absolute;
+      width: 20px !important;
+      height: 17px !important;
+      overflow: hidden;
+      top: -2px;
+      right: 0px;
+      background-color: rgba(255, 255, 255, 1);
+      padding: 0;
+    }
     .hideVineItems-toggleASIN {
       z-index: 1;
       position: absolute;
       width: 20px !important;
       height: 17px !important;
       overflow: hidden;
-      top: -18px;
-      right: 0px;
-      background-color: rgba(0,0,0,0.0);
       padding: 0;
+      top: 0;
+      left: 2px;
       background: url("${hideSymbol}");
       background-repeat: no-repeat;
       background-size:contain;
