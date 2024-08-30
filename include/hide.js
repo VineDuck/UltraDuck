@@ -284,13 +284,14 @@ function initHideItemsUK() {
     .hideVineItems-toggleASINContainer {
       z-index: 1;
       position: absolute;
-      width: 20px !important;
-      height: 17px !important;
+      width: 30px !important;
+      height: 22px !important;
       overflow: hidden;
       top: -2px;
       right: 0px;
       background-color: rgba(255, 255, 255, 1);
       padding: 0;
+      border: 1px solid #000;
     }
     .hideVineItems-toggleASIN {
       z-index: 1;
@@ -299,8 +300,8 @@ function initHideItemsUK() {
       height: 17px !important;
       overflow: hidden;
       padding: 0;
-      top: 0;
-      left: 2px;
+      top: 2px;
+      left: 5px;
       background: url("${hideSymbol}");
       background-repeat: no-repeat;
       background-size:contain;
