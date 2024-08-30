@@ -4,7 +4,7 @@ Hider script based on https://github.com/MD2K23/VineToolsUK/<br />
 Styles using https://github.com/Thorvarium/vine-styling<br />
 Settings using https://github.com/odyniec/MonkeyConfig
 
-**${\textsf{\color{green}Current version 1.1.2.1}}$ Updated 2024-08-30 **
+**${\textsf{\color{green}Current version 1.1.2.2}}$ Updated 2024-08-30 **
 
 For android install, [see this link](https://github.com/VineDuck/UltraDuck/blob/main/android.md)<br />
 
