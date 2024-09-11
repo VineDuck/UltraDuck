@@ -1,11 +1,11 @@
 # 🦆 UltraDuck 🦆
 ### How to install on android
 - First, go to the play store and install [Kiwi Browser](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser).
+- Download [Violent monkey 2.20](https://github.com/violentmonkey/violentmonkey/releases/download/v2.20.0/Violentmonkey-webext-v2.20.0.zip) to your phone.
 - Open Kiwi, tap the 3 dots at the top, and then extensions.
-- Tap the "+ (from store)" button.
-- In the search box at the top, enter violentmonkey.
-- Tap Violentmonkey from violentmonkey.github.io
-- Tap "Add to Chrome"
+- Enable developer mode.
+- Tap the "+ (from zip/crx/user.js)" button.
+- Find the file you downloaded above.
 - Close all tabs, and tap "New tab".
 - Open [this link](https://github.com/VineDuck/UltraDuck/raw/main/UltraDuck.user.js) in Kiwi, and you should get an install page.
 - Tap install.
