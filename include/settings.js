@@ -53,6 +53,10 @@ class ultraDuckSettings {
                 type: 'checkbox',
                 default: ultraDuckKeys.useKeys
             },
+            use_thor: {
+                type: 'checkbox',
+                default: ultraDuckStyle.useThor
+            },
         }
     });
     
@@ -70,5 +74,6 @@ class ultraDuckSettings {
         ultraDuckQuacker.rfyDelay = parseInt(ultraDuckSettings.settings.get('rfy_delay', 0));
         ultraDuckQuacker.quackAttack = parseInt(ultraDuckSettings.settings.get('quack_attack',0));
         ultraDuckKeys.useKeys = (ultraDuckSettings.settings.get('use_keyboard',true) == true);
+        ultraDuckStyle.useThor = (ultraDuckSettings.settings.get('use_thor',true) == true);
     }
 }

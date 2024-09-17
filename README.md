@@ -4,7 +4,7 @@ Hider script based on https://github.com/MD2K23/VineToolsUK/<br />
 Styles using https://github.com/Thorvarium/vine-styling<br />
 Settings using https://github.com/odyniec/MonkeyConfig
 
-**$${\large\textsf{\color{green}Current version 1.1.2.2}}$$ Updated 2024-08-30**
+**$${\large\textsf{\color{green}Current version 1.1.2.3}}$$ Updated 2024-09-17**
 
 For android install, [see this link](https://github.com/VineDuck/UltraDuck/blob/main/android.md)<br />
 
@@ -50,7 +50,8 @@ You should hear a quack after clicking the message.
 - Max refresh is the maximum time between refreshes, in milliseconds (seconds X 1000).
 - Rfy delay is a separate value for RFY refresh. If set to 0, RFY will use the same values as other pages. If set to a number of milliseconds, it'll use that.
 - Quack attack is whether the quack alert sound should be repeated. 0 for no, any other number is the number of seconds between quacks. Will stop when window is focused.
-- Use keys enables or disables keyboard shortcuts.
+- Use keyboard enables or disables keyboard shortcuts.
+- Use thor enables or disables the various Thorvarium styles included.
 
 ### How to update
 - Your userscript manager should have an update option, if not simply follow the install link again.
