@@ -19,6 +19,12 @@ class ultraDuck {
             // Hit a snag, probably a Captcha or error page
             if (! document.getElementById('vvp-reviews-tab')) {
                 ultraDuckQuacker.honk();
+                // Check for error, refresh after 10 seconds
+                if (document.querySelector("div.a-alert-error") != null) {
+                    setTimeout(function(){
+                        window.location.assign(href.toString());
+                    }, 10000);
+                }
                 return false;
             }
 
