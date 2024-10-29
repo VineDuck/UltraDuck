@@ -20,7 +20,7 @@ class ultraDuck {
             if (! document.getElementById('vvp-reviews-tab')) {
                 ultraDuckQuacker.honk();
                 // Check for error, refresh after 10 seconds
-                if (document.querySelector("div.a-alert-error") != null) {
+                if ((document.querySelector("div.a-alert-error") != null) || (document.querySelector("#vvp-fetch-account-error-alert") != null)) {
                     setTimeout(function(){
                         window.location.assign(href.toString());
                     }, 10000);
