@@ -21,7 +21,9 @@ class ultraDuck {
                 ultraDuckQuacker.honk();
                 // Check for error, refresh after 10 seconds
                 if ((document.querySelector("div.a-alert-error") != null) || (document.querySelector("#vvp-fetch-account-error-alert") != null)) {
+                    console.log('🦆⛔ Error page, refreshing in 10 seconds ⛔🦆');
                     setTimeout(function(){
+                        let href = new URL(window.location.href);
                         window.location.assign(href.toString());
                     }, 10000);
                 }
