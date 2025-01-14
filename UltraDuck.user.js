@@ -2,6 +2,7 @@
 // @name        UltraDuck
 // @namespace   UltraDuck
 // @match       https://www.amazon.co.uk/vine/vine-items*
+// @exclude     https://www.amazon.co.uk/vine/vine-items?queue=encore#monitor
 // @grant       GM.addStyle
 // @grant       GM_addStyle
 // @grant       GM_getValue
@@ -21,7 +22,7 @@
 // @author      Jimbo
 // @description Finds new items, and quacks
 // @run-at      document-start
-// @version     1.1.2.5
+// @version     1.1.2.6
 // @icon        https://raw.githubusercontent.com/VineDuck/UltraDuck/main/rubber-duck.png
 // ==/UserScript==
 
