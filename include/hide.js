@@ -321,12 +321,15 @@ function initHideItemsUK() {
       background-size:contain;
     }
 
-    .hideVineItems-showHidden .hideVineItems-hideASIN, .hideVineItems-showHidden .hideVineItems-filterProduct {
+    .hideVineItems-showHidden .hideVineItems-hideASIN, .hideVineItems-showHidden #vvp-items-grid > div.vvp-item-tile.vh-gridview.hideVineItems-hideASIN,
+    .hideVineItems-showHidden .hideVineItems-filterProduct, #vvp-items-grid > div.vvp-item-tile.vh-gridview.hideVineItems-filterProduct {
       display:unset;
     }
 
     .hideVineItems-showHidden .hideVineItems-hideASIN img, .hideVineItems-showHidden .hideVineItems-hideASIN .a-button, .hideVineItems-showHidden .hideVineItems-hideASIN a,
-    .hideVineItems-showHidden .hideVineItems-filterProduct img, .hideVineItems-showHidden .hideVineItems-filterProduct .a-button, .hideVineItems-showHidden .hideVineItems-filterProduct a{
+    .hideVineItems-showHidden .hideVineItems-filterProduct img, .hideVineItems-showHidden .hideVineItems-filterProduct .a-button, .hideVineItems-showHidden .hideVineItems-filterProduct a,
+    .hideVineItems-showHidden #vvp-items-grid > div.vvp-item-tile.vh-gridview.hideVineItems-hideASIN img
+    {
       opacity: 50%;
     }
 
