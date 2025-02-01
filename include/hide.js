@@ -273,7 +273,7 @@ function initHideItemsUK() {
       text-decoration: underline;
     }
 
-    .hideVineItems-hideASIN, .hideVineItems-filterProduct {
+    .hideVineItems-hideASIN, .hideVineItems-filterProduct, #vvp-items-grid > div.vvp-item-tile.vh-gridview.hideVineItems-hideASIN {
       display:none;
     }
 

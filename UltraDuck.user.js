@@ -22,7 +22,7 @@
 // @author      Jimbo
 // @description Finds new items, and quacks
 // @run-at      document-start
-// @version     1.1.2.6
+// @version     1.1.2.7
 // @icon        https://raw.githubusercontent.com/VineDuck/UltraDuck/main/rubber-duck.png
 // ==/UserScript==
 
