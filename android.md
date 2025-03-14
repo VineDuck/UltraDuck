@@ -1,4 +1,4 @@
-**$${\large\textsf{\color{red}Kiwi browser has been discontinued, but you can use Edge Canary instead.}}$$**
+## $${\large\textsf{\color{red}Kiwi browser has been discontinued, use Edge Canary instead.}}$$
 
 # 🦆 UltraDuck 🦆
 
