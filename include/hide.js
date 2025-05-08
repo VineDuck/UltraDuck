@@ -268,6 +268,10 @@ function initHideItemsUK() {
       color:${textcolour};
     }
 
+    vvp-item-tile.hideVineItems-hideASIN {
+      display: none !important;
+    }
+
     #hideVineItems-hideAll:hover, #hideVineItems-unhideAll:hover, #hideVineItems-filtersMenu:hover {
       color: #C7511F;
       text-decoration: underline;
