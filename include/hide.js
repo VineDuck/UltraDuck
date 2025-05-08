@@ -274,7 +274,7 @@ function initHideItemsUK() {
     }
 
     .hideVineItems-hideASIN, .hideVineItems-filterProduct, #vvp-items-grid > div.vvp-item-tile.vh-gridview.hideVineItems-hideASIN {
-      display:none;
+      display:none !important;
     }
 
     .vvp-item-tile-content {
@@ -323,7 +323,7 @@ function initHideItemsUK() {
 
     .hideVineItems-showHidden .hideVineItems-hideASIN, .hideVineItems-showHidden #vvp-items-grid > div.vvp-item-tile.vh-gridview.hideVineItems-hideASIN,
     .hideVineItems-showHidden .hideVineItems-filterProduct, #vvp-items-grid > div.vvp-item-tile.vh-gridview.hideVineItems-filterProduct {
-      display:unset;
+      display:unset !important;
     }
 
     .hideVineItems-showHidden .hideVineItems-hideASIN img, .hideVineItems-showHidden .hideVineItems-hideASIN .a-button, .hideVineItems-showHidden .hideVineItems-hideASIN a,
