@@ -52,11 +52,11 @@ class ultraDuckKeys {
                 break;
             case ultraDuckKeys.shortcuts.nextPage:
                 ultraDuckQuacker.stop();
-                document.querySelector("#vvp-items-grid-container>div>ul.a-pagination li:last-child a")?.click();
+                document.querySelector("#vvp-items-grid-container > nav > ul > li.a-last > a")?.click();
                 break;
             case ultraDuckKeys.shortcuts.prevPage:
                 ultraDuckQuacker.stop();
-                document.querySelector("#vvp-items-grid-container>div>ul.a-pagination li:first-child a")?.click();
+                document.querySelector("#vvp-items-grid-container > nav > ul > li:nth-child(1) > a")?.click();
                 break;
             case ultraDuckKeys.shortcuts.page1ai:
                 ultraDuckQuacker.stop();
