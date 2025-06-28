@@ -231,27 +231,26 @@ function initHideItemsUK() {
 
     //Add the correct classes to products so they behave correctly
     document.querySelectorAll(".vvp-item-tile").forEach( (tile) => {
-//        var itemLink = tile.querySelector(".vvp-item-product-title-container > a[href^='/dp/']");
-//        if (itemLink) {
-            ultraDuckQuacker.totalCount += 1;
-          var ASIN = tile.querySelector('.vvp-details-btn .a-button-input').dataset.asin;
-//            var ASIN = itemLink.getAttribute("href").slice(4);
-            var linkText=itemLink.textContent;
-            if (isHidden(ASIN)) {
-                tile.classList.add("hideVineItems-hideASIN");
-                ultraDuckQuacker.hiddenCount += 1;
+        var ASIN = tile.querySelector('.vvp-details-btn .a-button-input').dataset.asin;
+        var itemLink = tile.querySelector(".vvp-item-product-title-container > a[href^='/dp/']");
+        ultraDuckQuacker.totalCount += 1;
+        if (isHidden(ASIN)) {
+            tile.classList.add("hideVineItems-hideASIN");
+            ultraDuckQuacker.hiddenCount += 1;
+        } else {
+            if (itemLink) {
+                var linkText=itemLink.textContent;
+            }
+            if (containsKeyword("HIGHLIGHTS",linkText)){
+                tile.classList.add("hideVineItems-highlightProduct");
             } else {
-                if (containsKeyword("HIGHLIGHTS",linkText)){
-                    tile.classList.add("hideVineItems-highlightProduct");
-                } else {
-                    if (containsKeyword("FILTERS",linkText)){
-                        tile.classList.add("hideVineItems-filterProduct");
-                        ultraDuckQuacker.filteredCount += 1;
-                    }
+                if (containsKeyword("FILTERS",linkText)){
+                    tile.classList.add("hideVineItems-filterProduct");
+                    ultraDuckQuacker.filteredCount += 1;
                 }
             }
-            addHideLink(tile, ASIN);
-//        }
+        }
+        addHideLink(tile, ASIN);
     });
 
     // Show hidden items on Search page
