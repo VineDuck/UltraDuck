@@ -237,17 +237,13 @@ function initHideItemsUK() {
         if (isHidden(ASIN)) {
             tile.classList.add("hideVineItems-hideASIN");
             ultraDuckQuacker.hiddenCount += 1;
-        } else {
-            if (itemLink) {
-                var linkText=itemLink.textContent;
-            }
+        } else if (itemLink) {
+            var linkText=itemLink.textContent;
             if (containsKeyword("HIGHLIGHTS",linkText)){
                 tile.classList.add("hideVineItems-highlightProduct");
-            } else {
-                if (containsKeyword("FILTERS",linkText)){
-                    tile.classList.add("hideVineItems-filterProduct");
-                    ultraDuckQuacker.filteredCount += 1;
-                }
+            } else if (containsKeyword("FILTERS",linkText)){
+                tile.classList.add("hideVineItems-filterProduct");
+                ultraDuckQuacker.filteredCount += 1;
             }
         }
         addHideLink(tile, ASIN);
