@@ -231,10 +231,11 @@ function initHideItemsUK() {
 
     //Add the correct classes to products so they behave correctly
     document.querySelectorAll(".vvp-item-tile").forEach( (tile) => {
-        var itemLink = tile.querySelector(".vvp-item-product-title-container > a[href^='/dp/']");
-        if (itemLink) {
+//        var itemLink = tile.querySelector(".vvp-item-product-title-container > a[href^='/dp/']");
+//        if (itemLink) {
             ultraDuckQuacker.totalCount += 1;
-            var ASIN = itemLink.getAttribute("href").slice(4);
+          var ASIN = tile.querySelector('.vvp-details-btn .a-button-input').dataset.asin;
+//            var ASIN = itemLink.getAttribute("href").slice(4);
             var linkText=itemLink.textContent;
             if (isHidden(ASIN)) {
                 tile.classList.add("hideVineItems-hideASIN");
@@ -250,7 +251,7 @@ function initHideItemsUK() {
                 }
             }
             addHideLink(tile, ASIN);
-        }
+//        }
     });
 
     // Show hidden items on Search page
