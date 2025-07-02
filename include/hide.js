@@ -83,7 +83,7 @@ function initHideItemsUK() {
     messageSpan.querySelector("#hideVineItems-highlightText").addEventListener("click", function () {displayaddPopup("HIGHLIGHTS")});
     messageSpan.querySelector("#hideVineItems-unhighlightText").addEventListener("click", function() {displayremovePopup("HIGHLIGHTS")});
     messageSpan.querySelector("#hideVineItems-filtersMenu").addEventListener("click", (e) => {document.querySelectorAll(".dropdown .dropdown-content").forEach( (tile) => {tile.classList.toggle("dropdown-click");})});
-    document.querySelector("#vvp-items-grid-container > p").append(messageSpan);
+    document.querySelector("#vvp-items-grid-container").prepend(messageSpan);
 
     // Function to toggle hidden item status
     function toggleHidden(){
@@ -231,7 +231,7 @@ function initHideItemsUK() {
 
     //Add the correct classes to products so they behave correctly
     document.querySelectorAll(".vvp-item-tile").forEach( (tile) => {
-        var ASIN = tile.querySelector('.vvp-details-btn .a-button-input').dataset.asin;
+        var ASIN = tile.querySelector('.a-button-input').dataset.asin;
         var itemLink = tile.querySelector(".vvp-item-product-title-container > a[href^='/dp/']");
         ultraDuckQuacker.totalCount += 1;
         if (isHidden(ASIN)) {

@@ -17,7 +17,7 @@ class ultraDuck {
             ultraDuckQuacker.originalTitle = document.title;
 
             // Hit a snag, probably a Captcha or error page
-            if (! document.getElementById('vvp-reviews-tab')) {
+            if (! document.getElementById('vvp-reviews-tab') && ! document.getElementById('vvp-mobile-header-link-with-border')) {
                 ultraDuckQuacker.honk();
                 // Check for error, refresh after 10 seconds
                 if ((document.querySelector("div.a-alert-error") != null) || (document.querySelector("#vvp-fetch-account-error-alert") != null)) {
